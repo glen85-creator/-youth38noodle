@@ -36,8 +36,9 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <a href="#" className={`text-2xl font-serif font-black tracking-tighter ${isScrolled ? 'text-primary' : 'text-white'}`}>
-          청년38국수
+        <a href="#" className={`flex items-center gap-2 ${isScrolled ? 'text-primary' : 'text-white'}`}>
+          <img src="/images/common/38%EA%B5%AD%EC%88%98%20%EC%97%A0%EB%B8%94%EB%9F%BC.png" alt="청년38국수 로고" className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-white object-cover shadow-sm p-0.5" />
+          <span className="text-2xl font-serif font-black tracking-tighter">청년38국수</span>
         </a>
 
         {/* Desktop Menu */}
@@ -105,19 +106,19 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
-      image: 'https://picsum.photos/seed/korean-noodle-main/1920/1080',
+      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%881.jpg',
       title: '부모의 따뜻한 마음',
       sub: '청년38국수',
       desc: '3,800원의 정직한 가격, 20~30% 영업이익률의 상생 프랜차이즈'
     },
     {
-      image: 'https://picsum.photos/seed/noodle-cooking/1920/1080',
+      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%882.jpg',
       title: '정직한 맛, 정직한 가격',
       sub: '청년38국수',
       desc: '매일 아침 직접 우려낸 육수와 신선한 생면의 조화'
     },
     {
-      image: 'https://picsum.photos/seed/restaurant-partnership/1920/1080',
+      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%883.jpg',
       title: '상생하는 파트너십',
       sub: '함께 성장하는 청년38국수',
       desc: '본사 노마진 정책으로 점주님의 수익을 최우선으로 생각합니다'
@@ -362,12 +363,12 @@ const MenuSection = () => {
 
   const menuData: { [key: string]: { name: string; price: string; img: string; desc?: string }[] } = {
     '국수': [
-      { name: '[대표] 38국수', price: '3,800원', img: 'https://picsum.photos/seed/anchovy-noodle/600/400', desc: '멸치 육수 기반, 맑고 구수한 국물' },
-      { name: '김치국수', price: '5,800원', img: 'https://picsum.photos/seed/kimchi-noodle/600/400', desc: '새콤한 김치가 어우러진 시원한 맛' },
-      { name: '어묵국수', price: '5,800원', img: 'https://picsum.photos/seed/fishcake-noodle/600/400', desc: '푸짐한 어묵이 들어간 든든한 국수' },
+      { name: '[대표] 38국수', price: '3,800원', img: '/images/menu/[따뜻한국수]38국수.jpg', desc: '멸치 육수 기반, 맑고 구수한 국물' },
+      { name: '김치국수', price: '5,800원', img: '/images/menu/[따뜻한국수]김치국수.jpg', desc: '새콤한 김치가 어우러진 시원한 맛' },
+      { name: '어묵국수', price: '5,800원', img: '/images/menu/[따뜻한국수]어묵국수.jpg', desc: '푸짐한 어묵이 들어간 든든한 국수' },
       { name: '얼큰어묵국수', price: '6,800원', img: 'https://picsum.photos/seed/spicy-noodle/600/400', desc: '매콤한 육수와 어묵의 환상 조합' },
-      { name: '비빔국수', price: '6,800원', img: 'https://picsum.photos/seed/bibim-noodle/600/400', desc: '과일소스의 새콤달콤한 비빔면' },
-      { name: '얼큰국수', price: '5,800원', img: 'https://picsum.photos/seed/spicy-soup/600/400', desc: '속이 확 풀리는 얼큰한 육수' },
+      { name: '비빔국수', price: '6,800원', img: '/images/menu/[따뜻한국수]비빔국수.jpg', desc: '과일소스의 새콤달콤한 비빔면' },
+      { name: '얼큰국수', price: '5,800원', img: '/images/menu/[따뜻한국수]얼큰국수.jpg', desc: '속이 확 풀리는 얼큰한 육수' },
       { name: '소고기국수', price: '7,800원', img: 'https://picsum.photos/seed/beef-noodle/600/400', desc: '소고기 고명이 듬뿍 올라간 진한 맛' },
       { name: '얼큰고기국수', price: '7,800원', img: 'https://picsum.photos/seed/spicy-beef-noodle/600/400', desc: '매콤한 육수에 소고기를 더한 보양식' },
     ],
@@ -384,23 +385,23 @@ const MenuSection = () => {
       { name: '김치찌개돈까스', price: '7,800원', img: 'https://picsum.photos/seed/pork-cutlet-stew/600/400', desc: '얼큰한 김치찌개와 바삭한 돈까스' },
     ],
     '덮밥/곁들임': [
-      { name: '매콤제육덮밥', price: '4,800원', img: 'https://picsum.photos/seed/spicy-pork-rice/600/400', desc: '불맛 나는 매콤한 제육 덮밥' },
-      { name: '파닭마요덮밥', price: '4,800원', img: 'https://picsum.photos/seed/chicken-mayo/600/400', desc: '고소한 마요네즈와 파닭의 조화' },
-      { name: '계란후라이밥', price: '2,800원', img: 'https://picsum.photos/seed/egg-rice/600/400', desc: '간단하지만 든든한 계란밥' },
+      { name: '매콤제육덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]매콤제육덮밥.jpg', desc: '불맛 나는 매콤한 제육 덮밥' },
+      { name: '파닭마요덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]파닭마요덮밥.jpg', desc: '고소한 마요네즈와 파닭의 조화' },
+      { name: '계란후라이밥', price: '2,800원', img: '/images/menu/[곁들임]간장계란밥.jpg', desc: '간단하지만 든든한 계란밥' },
       { name: '아침愛국밥', price: '3,800원', img: 'https://picsum.photos/seed/korean-soup-rice/600/400', desc: '아침을 여는 따뜻한 국밥 한 그릇' },
-      { name: '미니치즈돈까스', price: '4,800원', img: 'https://picsum.photos/seed/cheese-cutlet/600/400', desc: '치즈가 듬뿍 들어간 미니 돈까스' },
-      { name: '미니돈까스', price: '3,800원', img: 'https://picsum.photos/seed/mini-cutlet/600/400', desc: '바삭하게 튀겨낸 미니 돈까스' },
-      { name: '직화불고기', price: '3,800원', img: 'https://picsum.photos/seed/bulgogi/600/400', desc: '직화로 구워 불향 가득한 불고기' },
+      { name: '미니치즈돈까스', price: '4,800원', img: '/images/menu/[곁들임]미니치즈돈까스.jpg', desc: '치즈가 듬뿍 들어간 미니 돈까스' },
+      { name: '미니돈까스', price: '3,800원', img: '/images/menu/[곁들임]미니돈까스.jpg', desc: '바삭하게 튀겨낸 미니 돈까스' },
+      { name: '직화불고기', price: '3,800원', img: '/images/menu/[곁들임]직화불고기.jpg', desc: '직화로 구워 불향 가득한 불고기' },
       { name: '튀김만두', price: '3,800원', img: 'https://picsum.photos/seed/fried-dumpling/600/400', desc: '겉바속촉 고소한 튀김만두' },
       { name: '팝콘군만두', price: '3,800원', img: 'https://picsum.photos/seed/popcorn-dumpling/600/400', desc: '한입에 쏙 들어가는 팝콘 만두' },
-      { name: '꼬맹이물만두', price: '3,800원', img: 'https://picsum.photos/seed/water-dumpling/600/400', desc: '부드럽고 촉촉한 물만두' },
+      { name: '꼬맹이물만두', price: '3,800원', img: '/images/menu/[곁들임]물만두.jpg', desc: '부드럽고 촉촉한 물만두' },
     ],
     '여름메뉴': [
-      { name: '콩국수', price: '7,800원', img: 'https://picsum.photos/seed/cold-soy-noodle/600/400', desc: '직접 갈아 만든 진한 콩물의 콩국수' },
-      { name: '열무국수', price: '7,800원', img: 'https://picsum.photos/seed/yeolmu-noodle/600/400', desc: '아삭한 열무김치와 시원한 육수' },
-      { name: '냉국수', price: '6,800원', img: 'https://picsum.photos/seed/cold-noodle-soup/600/400', desc: '살얼음 동동 띄운 시원한 냉국수' },
-      { name: '물냉면', price: '6,800원', img: 'https://picsum.photos/seed/naengmyeon/600/400', desc: '가슴속까지 시원해지는 물냉면' },
-      { name: '비빔냉면', price: '7,800원', img: 'https://picsum.photos/seed/bibim-naengmyeon/600/400', desc: '매콤달콤한 양념의 비빔냉면' },
+      { name: '콩국수', price: '7,800원', img: '/images/menu/[시원한국수]콩국수.jpg', desc: '직접 갈아 만든 진한 콩물의 콩국수' },
+      { name: '열무국수', price: '7,800원', img: '/images/menu/[시원한국수]열무국수.jpg', desc: '아삭한 열무김치와 시원한 육수' },
+      { name: '냉국수', price: '6,800원', img: '/images/menu/[시원한국수]냉국수.jpg', desc: '살얼음 동동 띄운 시원한 냉국수' },
+      { name: '물냉면', price: '6,800원', img: '/images/menu/[시원한국수]물냉면.jpg', desc: '가슴속까지 시원해지는 물냉면' },
+      { name: '비빔냉면', price: '7,800원', img: '/images/menu/[시원한국수]비빔냉면.jpg', desc: '매콤달콤한 양념의 비빔냉면' },
       { name: '메밀싹냉국수', price: '7,800원', img: 'https://picsum.photos/seed/buckwheat-noodle/600/400', desc: '건강한 메밀싹이 올라간 냉국수' },
     ]
   };
@@ -879,7 +880,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
           <div>
-            <div className="text-3xl font-serif font-black mb-4">청년38국수</div>
+            <div className="flex items-center gap-3 mb-6">
+              <img src="/images/common/38%EA%B5%AD%EC%88%98%20%EC%97%A0%EB%B8%94%EB%9F%BC.png" alt="청년38국수 로고" className="h-12 w-12 md:h-16 md:w-16 rounded-full bg-white object-cover shadow-lg p-1" />
+              <span className="text-3xl font-serif font-black">청년38국수</span>
+            </div>
             <p className="text-white/50 leading-relaxed">
               부모의 따뜻한 마음을 한 그릇에 담았습니다.<br />
               정직한 맛과 상생의 가치를 실현하는<br />
