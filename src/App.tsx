@@ -106,19 +106,19 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
-      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%881.jpg',
+      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%881.webp',
       title: '부모의 따뜻한 마음',
       sub: '청년38국수',
       desc: '3,800원의 정직한 가격, 20~30% 영업이익률의 상생 프랜차이즈'
     },
     {
-      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%882.jpg',
+      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%882.webp',
       title: '정직한 맛, 정직한 가격',
       sub: '청년38국수',
       desc: '매일 아침 직접 우려낸 육수와 신선한 생면의 조화'
     },
     {
-      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%883.jpg',
+      image: '/images/hero/%EB%A9%94%EC%9D%B8%EB%B0%B0%EB%84%883.webp',
       title: '상생하는 파트너십',
       sub: '함께 성장하는 청년38국수',
       desc: '본사 노마진 정책으로 점주님의 수익을 최우선으로 생각합니다'
@@ -303,20 +303,35 @@ const Metrics = () => {
 const BrandStory = () => {
   return (
     <section id="brand-story" className="py-24 px-4 bg-bg overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-16">
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="flex-1 relative"
+          className="flex-1 relative w-full"
         >
-          <div className="absolute -top-4 -left-4 w-full h-full border-2 border-primary/20 z-0" />
-          <img 
-            src="https://picsum.photos/seed/korean-traditional-meal/800/1000" 
-            alt="Brand Story" 
-            className="relative z-10 w-full rounded-sm shadow-2xl"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute -bottom-10 -right-10 text-primary/10 font-display text-9xl font-black hidden lg:block">
+          {/* 신문 배경 효과 */}
+          <div className="absolute -inset-2 bg-[#f4f1ea] border border-dark/20 shadow-xl rotate-[1deg] z-0" />
+          <div className="absolute -inset-2 bg-white border border-dark/10 shadow-sm -rotate-[2deg] z-0" />
+          
+          {/* 신문 콘텐츠 영역 */}
+          <div className="relative z-10 bg-[#fbf9f6] p-4 border border-dark/10 shadow-[2px_2px_10px_rgba(0,0,0,0.1)] h-full flex flex-col">
+            <div className="border-b-2 border-dark/20 pb-2 mb-4 text-center">
+              <span className="font-serif font-black text-dark/70 text-sm md:text-base tracking-widest">YOUTH 38 NOODLE DAILY</span>
+            </div>
+            
+            <img 
+              src="/images/common/%EC%9C%A1%EC%88%98%EC%BB%A8%EC%85%892.webp" 
+              alt="Brand Story" 
+              className="w-full flex-1 object-cover grayscale sepia-[.3] contrast-125 mix-blend-multiply"
+              referrerPolicy="no-referrer"
+            />
+            
+            <div className="mt-4 border-t border-dark/10 pt-2 text-right text-xs md:text-sm text-dark/60 font-serif italic">
+              1988년부터 변함없는 정성, 매일 아침 직접 우려내는 육수
+            </div>
+          </div>
+          
+          <div className="absolute -bottom-10 -right-10 text-primary/10 font-display text-9xl font-black hidden lg:block pointer-events-none z-0">
             청년38국수
           </div>
         </motion.div>
@@ -324,7 +339,7 @@ const BrandStory = () => {
         <motion.div 
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="flex-1"
+          className="flex-1 flex flex-col justify-center py-8"
         >
           <div className="border-l-4 border-secondary pl-8">
             <h2 className="text-4xl md:text-6xl font-serif font-black mb-8 leading-tight">
@@ -363,12 +378,12 @@ const MenuSection = () => {
 
   const menuData: { [key: string]: { name: string; price: string; img: string; desc?: string }[] } = {
     '국수': [
-      { name: '[대표] 38국수', price: '3,800원', img: '/images/menu/[따뜻한국수]38국수.jpg', desc: '멸치 육수 기반, 맑고 구수한 국물' },
-      { name: '김치국수', price: '5,800원', img: '/images/menu/[따뜻한국수]김치국수.jpg', desc: '새콤한 김치가 어우러진 시원한 맛' },
-      { name: '어묵국수', price: '5,800원', img: '/images/menu/[따뜻한국수]어묵국수.jpg', desc: '푸짐한 어묵이 들어간 든든한 국수' },
+      { name: '[대표] 38국수', price: '3,800원', img: '/images/menu/[따뜻한국수]38국수.webp', desc: '멸치 육수 기반, 맑고 구수한 국물' },
+      { name: '김치국수', price: '5,800원', img: '/images/menu/[따뜻한국수]김치국수.webp', desc: '새콤한 김치가 어우러진 시원한 맛' },
+      { name: '어묵국수', price: '5,800원', img: '/images/menu/[따뜻한국수]어묵국수.webp', desc: '푸짐한 어묵이 들어간 든든한 국수' },
       { name: '얼큰어묵국수', price: '6,800원', img: 'https://picsum.photos/seed/spicy-noodle/600/400', desc: '매콤한 육수와 어묵의 환상 조합' },
-      { name: '비빔국수', price: '6,800원', img: '/images/menu/[따뜻한국수]비빔국수.jpg', desc: '과일소스의 새콤달콤한 비빔면' },
-      { name: '얼큰국수', price: '5,800원', img: '/images/menu/[따뜻한국수]얼큰국수.jpg', desc: '속이 확 풀리는 얼큰한 육수' },
+      { name: '비빔국수', price: '6,800원', img: '/images/menu/[따뜻한국수]비빔국수.webp', desc: '과일소스의 새콤달콤한 비빔면' },
+      { name: '얼큰국수', price: '5,800원', img: '/images/menu/[따뜻한국수]얼큰국수.webp', desc: '속이 확 풀리는 얼큰한 육수' },
       { name: '소고기국수', price: '7,800원', img: 'https://picsum.photos/seed/beef-noodle/600/400', desc: '소고기 고명이 듬뿍 올라간 진한 맛' },
       { name: '얼큰고기국수', price: '7,800원', img: 'https://picsum.photos/seed/spicy-beef-noodle/600/400', desc: '매콤한 육수에 소고기를 더한 보양식' },
     ],
@@ -385,23 +400,23 @@ const MenuSection = () => {
       { name: '김치찌개돈까스', price: '7,800원', img: 'https://picsum.photos/seed/pork-cutlet-stew/600/400', desc: '얼큰한 김치찌개와 바삭한 돈까스' },
     ],
     '덮밥/곁들임': [
-      { name: '매콤제육덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]매콤제육덮밥.jpg', desc: '불맛 나는 매콤한 제육 덮밥' },
-      { name: '파닭마요덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]파닭마요덮밥.jpg', desc: '고소한 마요네즈와 파닭의 조화' },
-      { name: '계란후라이밥', price: '2,800원', img: '/images/menu/[곁들임]간장계란밥.jpg', desc: '간단하지만 든든한 계란밥' },
+      { name: '매콤제육덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]매콤제육덮밥.webp', desc: '불맛 나는 매콤한 제육 덮밥' },
+      { name: '파닭마요덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]파닭마요덮밥.webp', desc: '고소한 마요네즈와 파닭의 조화' },
+      { name: '계란후라이밥', price: '2,800원', img: '/images/menu/[곁들임]간장계란밥.webp', desc: '간단하지만 든든한 계란밥' },
       { name: '아침愛국밥', price: '3,800원', img: 'https://picsum.photos/seed/korean-soup-rice/600/400', desc: '아침을 여는 따뜻한 국밥 한 그릇' },
-      { name: '미니치즈돈까스', price: '4,800원', img: '/images/menu/[곁들임]미니치즈돈까스.jpg', desc: '치즈가 듬뿍 들어간 미니 돈까스' },
-      { name: '미니돈까스', price: '3,800원', img: '/images/menu/[곁들임]미니돈까스.jpg', desc: '바삭하게 튀겨낸 미니 돈까스' },
-      { name: '직화불고기', price: '3,800원', img: '/images/menu/[곁들임]직화불고기.jpg', desc: '직화로 구워 불향 가득한 불고기' },
+      { name: '미니치즈돈까스', price: '4,800원', img: '/images/menu/[곁들임]미니치즈돈까스.webp', desc: '치즈가 듬뿍 들어간 미니 돈까스' },
+      { name: '미니돈까스', price: '3,800원', img: '/images/menu/[곁들임]미니돈까스.webp', desc: '바삭하게 튀겨낸 미니 돈까스' },
+      { name: '직화불고기', price: '3,800원', img: '/images/menu/[곁들임]직화불고기.webp', desc: '직화로 구워 불향 가득한 불고기' },
       { name: '튀김만두', price: '3,800원', img: 'https://picsum.photos/seed/fried-dumpling/600/400', desc: '겉바속촉 고소한 튀김만두' },
       { name: '팝콘군만두', price: '3,800원', img: 'https://picsum.photos/seed/popcorn-dumpling/600/400', desc: '한입에 쏙 들어가는 팝콘 만두' },
-      { name: '꼬맹이물만두', price: '3,800원', img: '/images/menu/[곁들임]물만두.jpg', desc: '부드럽고 촉촉한 물만두' },
+      { name: '꼬맹이물만두', price: '3,800원', img: '/images/menu/[곁들임]물만두.webp', desc: '부드럽고 촉촉한 물만두' },
     ],
     '여름메뉴': [
-      { name: '콩국수', price: '7,800원', img: '/images/menu/[시원한국수]콩국수.jpg', desc: '직접 갈아 만든 진한 콩물의 콩국수' },
-      { name: '열무국수', price: '7,800원', img: '/images/menu/[시원한국수]열무국수.jpg', desc: '아삭한 열무김치와 시원한 육수' },
-      { name: '냉국수', price: '6,800원', img: '/images/menu/[시원한국수]냉국수.jpg', desc: '살얼음 동동 띄운 시원한 냉국수' },
-      { name: '물냉면', price: '6,800원', img: '/images/menu/[시원한국수]물냉면.jpg', desc: '가슴속까지 시원해지는 물냉면' },
-      { name: '비빔냉면', price: '7,800원', img: '/images/menu/[시원한국수]비빔냉면.jpg', desc: '매콤달콤한 양념의 비빔냉면' },
+      { name: '콩국수', price: '7,800원', img: '/images/menu/[시원한국수]콩국수.webp', desc: '직접 갈아 만든 진한 콩물의 콩국수' },
+      { name: '열무국수', price: '7,800원', img: '/images/menu/[시원한국수]열무국수.webp', desc: '아삭한 열무김치와 시원한 육수' },
+      { name: '냉국수', price: '6,800원', img: '/images/menu/[시원한국수]냉국수.webp', desc: '살얼음 동동 띄운 시원한 냉국수' },
+      { name: '물냉면', price: '6,800원', img: '/images/menu/[시원한국수]물냉면.webp', desc: '가슴속까지 시원해지는 물냉면' },
+      { name: '비빔냉면', price: '7,800원', img: '/images/menu/[시원한국수]비빔냉면.webp', desc: '매콤달콤한 양념의 비빔냉면' },
       { name: '메밀싹냉국수', price: '7,800원', img: 'https://picsum.photos/seed/buckwheat-noodle/600/400', desc: '건강한 메밀싹이 올라간 냉국수' },
     ]
   };
