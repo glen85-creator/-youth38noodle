@@ -340,14 +340,14 @@ const BrandStory = () => {
             </div>
 
             <img
-              src="/images/common/%EC%9C%A1%EC%88%98%EC%BB%A8%EC%85%892.webp"
-              alt="Brand Story"
-              className="w-full flex-1 object-cover grayscale sepia-[.3] contrast-125 mix-blend-multiply"
+              src="/images/common/%EC%A0%84%EC%B2%B4%EC%83%B7.webp"
+              alt="청년38국수 대표 메뉴 여섯 그릇"
+              className="w-full flex-1 object-cover sepia-[.15] contrast-110"
               referrerPolicy="no-referrer"
             />
 
             <div className="mt-4 border-t border-dark/10 pt-2 text-right text-xs md:text-sm text-dark/60 font-serif italic">
-              매일 새벽 직접 우려내는 육수, 20년 노하우의 생면
+              같은 마음으로 차려내는, 오늘의 따뜻한 한 그릇
             </div>
           </div>
 
@@ -367,23 +367,39 @@ const BrandStory = () => {
             </h2>
             <div className="space-y-6 text-lg text-dark/80 leading-relaxed">
               <p>
-                청년38국수는 단순한 저가 국수가 아닙니다.<br />
-                바쁜 현대인의 식탁에서 점점 사라져 가는<br />
-                <strong>'어머니의 국수 한 그릇'</strong>을 소환하여,
+                편의점 간편식과 배달 음식 사이에서,<br />
+                <strong>든든한 한 끼</strong>를 챙기지 못하는 청년들에게
+                <br />
+                <strong>"집에서 차려주던 따뜻한 국수 한 그릇"</strong>을
+                <br />
+                그대로 건네고 싶었습니다.
               </p>
               <p>
-                언제 어디서나 건강하고 정직한 한 끼를<br />
-                제공하겠다는 철학에서 출발하였습니다.
+                시그니처 <strong className="text-primary">38국수 3,800원부터</strong>,
+                <br />
+                전 메뉴 3,800~8,800원.
+                <br />
+                부담 없는 가격 안에 <strong>정직한 재료</strong>와{' '}
+                <strong>제대로 된 한식의 기본</strong>을 담았습니다.
               </p>
               <p>
-                패스트푸드의 편의성과 한식의 정성을<br />
-                동시에 담아낸 브랜드, 청년38국수입니다.
+                청년38국수는 한 끼를 파는 일이 아니라,
+                <br />
+                <strong>청년의 하루를 지키는 일</strong>이라 믿습니다.
               </p>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-6">
-              {['🌿 자연', '🏡 따뜻함', '💚 건강', '⏳ 정성'].map(tag => (
-                <span key={tag} className="text-xl font-serif text-primary font-bold">{tag}</span>
+            <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-4">
+              {[
+                { label: '부모의 마음', desc: '따뜻한 한 끼로 청년의 하루를' },
+                { label: '정직한 가격', desc: '3,800원부터, 부담 없이' },
+                { label: '한식의 기본', desc: '냉동·건조 없는 생면과 육수' },
+                { label: '상생의 철학', desc: '본사 노마진으로 함께' },
+              ].map(({ label, desc }) => (
+                <div key={label} className="border-l-2 border-secondary/60 pl-3">
+                  <div className="font-serif text-lg font-bold text-primary">{label}</div>
+                  <div className="text-sm text-dark/60 leading-snug">{desc}</div>
+                </div>
               ))}
             </div>
           </div>
@@ -492,45 +508,61 @@ const DonationStory = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12"
         >
-          <div className="bg-white rounded-3xl overflow-hidden shadow-lg group">
-            <div className="h-56 overflow-hidden relative bg-gradient-to-br from-primary/20 to-primary/5">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-lg group flex flex-col">
+            <div className="h-72 overflow-hidden relative bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
               <img
                 src="/images/donation/%EB%A0%88%EC%9D%B8%EC%BD%94%EB%A6%AC%EC%95%84.webp"
-                alt="레인코리아"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="레인코리아 기부증서"
+                className="max-h-full max-w-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full">
+              <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                 교육 지원
               </div>
             </div>
-            <div className="p-7">
+            <div className="p-7 flex-1 flex flex-col">
+              <div className="text-xs font-bold text-primary/60 tracking-widest mb-2">PARTNER 01</div>
               <h3 className="text-2xl font-serif font-black mb-3 text-primary">레인코리아</h3>
-              <p className="text-dark/70 leading-relaxed">
-                글로벌 학교를 운영하는 청년 교육 기관.<br />
-                청년38국수의 기부가 <strong>청년들의 배움의 기회</strong>로 이어집니다.
+              <p className="text-sm text-dark/75 leading-relaxed mb-4 flex-1">
+                <em className="not-italic font-bold text-primary">"교육이 바뀌면, 사회가 바뀝니다."</em>
+                <br /><br />
+                탈북·다문화 청년과 배움의 기회가 부족한 청소년을 위해{' '}
+                <strong>글로벌 학교</strong>를 운영하는 교육 기관입니다.
+                한 그릇의 기부가 한 청년의 <strong>다음 한 학기</strong>가 되어,
+                더 넓은 세상으로 나아갈 발판이 됩니다.
               </p>
+              <div className="border-t border-primary/10 pt-3 text-xs text-dark/50">
+                기부가 닿는 곳 · 청년 교육과 배움의 기회
+              </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl overflow-hidden shadow-lg group">
-            <div className="h-56 overflow-hidden relative bg-gradient-to-br from-secondary/20 to-secondary/5">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-lg group flex flex-col">
+            <div className="h-72 overflow-hidden relative bg-gradient-to-br from-secondary/10 to-secondary/5 flex items-center justify-center">
               <img
                 src="/images/donation/%EC%B2%AD%EB%85%84%EB%AC%B8%EA%B0%84%20%ED%9B%84%EC%9B%90%EC%A6%9D%EC%84%9C.webp"
                 alt="청년문간 후원증서"
-                className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                className="max-h-full max-w-full object-contain p-5 group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1.5 rounded-full">
+              <div className="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                 커뮤니티 지원
               </div>
             </div>
-            <div className="p-7">
+            <div className="p-7 flex-1 flex flex-col">
+              <div className="text-xs font-bold text-secondary/70 tracking-widest mb-2">PARTNER 02</div>
               <h3 className="text-2xl font-serif font-black mb-3 text-secondary">청년문간</h3>
-              <p className="text-dark/70 leading-relaxed">
-                <strong>3,000원 김치찌개</strong>를 운영하는 청년 커뮤니티.<br />
-                청년들이 배부르게 한 끼를 해결할 수 있도록 힘을 보탭니다.
+              <p className="text-sm text-dark/75 leading-relaxed mb-4 flex-1">
+                <em className="not-italic font-bold text-secondary">"한 끼가 누군가에게는 하루를 지키는 힘이 됩니다."</em>
+                <br /><br />
+                <strong>3,000원 김치찌개</strong>로 주머니 사정이 어려운 청년과
+                지역 이웃에게 따뜻한 식사를 건네는 사회적 식당입니다.
+                청년38국수의 기부는 이곳에서{' '}
+                <strong>오늘의 한 끼</strong>가 되어, 누군가의 내일을 든든하게 받쳐 줍니다.
               </p>
+              <div className="border-t border-secondary/10 pt-3 text-xs text-dark/50">
+                기부가 닿는 곳 · 청년 식사 지원과 커뮤니티
+              </div>
             </div>
           </div>
         </motion.div>
@@ -769,17 +801,24 @@ const StoreTypes = () => {
                 </p>
               </div>
 
-              <div className="px-7 pb-7 mt-auto space-y-3">
+              <div className="px-7 pb-7 mt-auto space-y-4">
                 {m.stores.map((s) => (
                   <div key={s.name} className="bg-bg/60 rounded-2xl overflow-hidden border border-primary/5">
-                    {s.img && (
-                      <div className="h-32 overflow-hidden bg-primary/5">
+                    {s.img ? (
+                      <div className="h-56 overflow-hidden bg-primary/5 relative">
                         <img
                           src={s.img}
                           alt={s.alt}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
+                      </div>
+                    ) : (
+                      <div className="h-56 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                        <div className="text-center">
+                          <Store className="mx-auto text-primary/40 mb-2" size={32} />
+                          <div className="text-xs font-bold text-primary/60 tracking-widest">COMING SOON</div>
+                        </div>
                       </div>
                     )}
                     <div className="p-4">
@@ -1073,36 +1112,48 @@ const Support = () => {
 
 const Gallery = () => {
   const images = [
-    'https://picsum.photos/seed/korean-restaurant-exterior/800/600',
-    'https://picsum.photos/seed/noodle-shop-interior/600/800',
-    'https://picsum.photos/seed/kitchen-cooking/800/800',
-    'https://picsum.photos/seed/noodle-close-up/600/600',
-    'https://picsum.photos/seed/people-eating-noodle/800/1000',
-    'https://picsum.photos/seed/takeout-food/1000/800',
+    { src: '/images/stores/munjeong/exterior.webp', caption: '청년38국수 문정점 · 외관', tag: '문정점' },
+    { src: '/images/common/%EC%A0%84%EC%B2%B4%EC%83%B7.webp', caption: '대표 메뉴 여섯 가지 한 상', tag: '메뉴' },
+    { src: '/images/stores/dasan/exterior.webp', caption: '다산38국수 다산점 · GH 공간복지홈', tag: '다산점' },
+    { src: '/images/stores/munjeong/interior.webp', caption: '문정점 · 편안한 좌석 구성', tag: '문정점' },
+    { src: '/images/common/%EC%9C%A1%EC%88%98%EC%BB%A8%EC%85%892.webp', caption: '매일 우려내는 육수 한 솥', tag: '육수' },
+    { src: '/images/stores/wolpyeong/exterior.webp', caption: '청년38국수 월평점 · 대전 월평동', tag: '월평점' },
+    { src: '/images/stores/dasan/interior.webp', caption: '다산점 · 지역 이웃이 함께하는 홀', tag: '다산점' },
+    { src: '/images/common/%EC%BB%A8%EC%85%893.webp', caption: '비빔국수 · 한 상 차림 컨셉', tag: '메뉴' },
+    { src: '/images/stores/wolpyeong/interior.webp', caption: '월평점 · 한결같은 로고 월', tag: '월평점' },
   ];
 
   return (
     <section className="py-24 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-black mb-2">매장 갤러리</h2>
-          <p className="text-primary font-bold">청년38국수 다산점 — 직영 1호점</p>
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-5 py-2 rounded-full text-sm font-bold mb-5 border border-primary/20">
+            GALLERY
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif font-black mb-3">현장 속의 청년38국수</h2>
+          <p className="text-dark/60 max-w-xl mx-auto">
+            문정 · 다산 · 월평 세 매장과 대표 메뉴를 모았습니다. 각 매장의 공기와 그 안에 담긴 정성을 함께 보실 수 있어요.
+          </p>
         </div>
 
-        <div className="columns-2 md:columns-3 gap-6 space-y-6">
+        <div className="columns-2 md:columns-3 gap-5 space-y-5">
           {images.map((img, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 1.02 }}
-              className="break-inside-avoid rounded-xl overflow-hidden shadow-lg cursor-pointer"
+              className="break-inside-avoid rounded-2xl overflow-hidden shadow-md bg-bg/50 group relative"
             >
               <img
-                src={img}
-                alt={`Store ${i}`}
+                src={img.src}
+                alt={img.caption}
                 className="w-full h-auto"
-                referrerPolicy="no-referrer"
                 loading="lazy"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/75 via-dark/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-[10px] font-bold tracking-widest text-secondary mb-1">{img.tag.toUpperCase()}</div>
+                <div className="text-sm font-bold">{img.caption}</div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -1114,12 +1165,38 @@ const Gallery = () => {
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const faqs = [
-    { q: '외식업 경험이 없어도 창업이 가능한가요?', a: '네, 전혀 문제없습니다. 본사에서 2주간 체계적인 교육을 제공하며, 외식업 경력 없이도 충분히 운영 가능한 시스템으로 설계되어 있습니다.' },
-    { q: '초기 투자비용 외에 본사 보증금이 있나요?', a: '청년38국수는 상생 정책의 일환으로 본사 보증금이 없습니다. 초기 부담을 최소화하여 가맹점주의 수익성을 최우선으로 합니다.' },
-    { q: '로열티는 얼마인가요?', a: '업계 최저 수준의 투명한 로열티 정책을 운영하고 있습니다. 은닉 수수료 없이 명확하게 공개하며, 구체적인 요율은 가맹 상담 시 안내드립니다.' },
-    { q: '혼자서도 운영이 가능한가요?', a: '소형 가맹점(키오스크형)의 경우 1~2인 운영이 가능합니다. 일반 가맹점은 2~3명(점주 포함) 운영을 권장합니다.' },
-    { q: '식재료는 반드시 본사에서 구매해야 하나요?', a: '생면, 육수 베이스 등 핵심 원재료는 본사 지정 공급을 따릅니다. 단, 본사는 식재료 공급에서 별도 마진을 취하지 않는 노마진 정책을 운영합니다.' },
-    { q: '가맹 계약 기간과 갱신 조건은 어떻게 되나요?', a: '기본 계약 기간은 5년이며, 성실 운영 가맹점에 대한 재계약 시 가맹비 감면 혜택이 있습니다. 세부 조건은 상담 시 안내드립니다.' },
+    {
+      q: '외식업 경험이 없어도 창업이 가능한가요?',
+      a: '네, 전혀 문제없습니다. 본사에서 2주간의 기초 교육(조리·운영·고객응대·위생)을 제공하고, 개점 당일에도 본사 담당자가 현장에 함께합니다. 생면·육수·소스 등 핵심 재료가 표준화되어 있어 외식업 경력 없이도 일정한 품질로 운영하실 수 있습니다.',
+    },
+    {
+      q: '초기 투자비용은 어느 정도 들까요? 본사 보증금이 있나요?',
+      a: '매장 타입(셀프형 15~20평 / 가든형 30~50평 / 특수형)과 입지에 따라 차이가 있어, 총 투자 규모는 상권 분석 후 별도 견적으로 안내드립니다. 다만 본사 보증금은 받지 않으며, 식재료 공급에서도 별도 마진을 취하지 않는 노마진 정책을 운영합니다.',
+    },
+    {
+      q: '로열티와 광고분담금 구조는 어떻게 되나요?',
+      a: '은닉 수수료 없이 매월 고정된 방식으로 투명하게 운영합니다. 구체적인 요율과 정산 방식은 가맹정의서를 기준으로 상담 시 상세히 안내드립니다.',
+    },
+    {
+      q: '매장 모델(커뮤니티형·지역연계형·가맹형)과 상권별 타입은 어떻게 정해지나요?',
+      a: '먼저 희망 상권에 대한 본사 무료 상권 분석을 진행한 뒤, 유동 특성·배후 수요·공실 면적에 따라 셀프형 / 가든형 / 특수형 중 최적 타입을 제안드립니다. 지역 기관·공공 공간과 연계된 입지의 경우 지역연계형으로 설계될 수 있습니다.',
+    },
+    {
+      q: '100원 기부는 가맹점주의 추가 부담인가요?',
+      a: '아닙니다. 대표 메뉴 38국수 판매 수량에 비례한 기부금은 본사 차원에서 집계·전달되며, 가맹점주께 별도 부담을 드리지 않습니다. 현재 청년 교육 기관 「레인코리아」, 청년 커뮤니티 「청년문간」 두 곳으로 정기 후원이 이루어지고 있습니다.',
+    },
+    {
+      q: '왜 다산점은 「다산38국수」라는 이름으로 운영되나요?',
+      a: '다산점은 경기주택도시공사(GH)의 「공간복지홈」 협력 사업으로 개설된 지역연계형 매장입니다. 지역 공공 공간과 함께하는 매장의 취지를 살리기 위해, 동일한 레시피·품질을 유지하되 지역 이름을 단 로컬 브랜드(다산38국수)로 운영하고 있습니다.',
+    },
+    {
+      q: '식재료는 반드시 본사에서 구매해야 하나요?',
+      a: '생면·육수 베이스·시그니처 소스 등 맛의 핵심을 좌우하는 재료는 본사 지정 공급을 따릅니다. 다만 본사는 해당 공급에서 별도 마진을 취하지 않으며(노마진 정책), 그 외 부자재와 소모품은 가맹점이 직접 수급하실 수 있습니다.',
+    },
+    {
+      q: '가맹 계약 기간과 갱신 조건은 어떻게 되나요?',
+      a: '기본 계약 기간은 5년이며, 성실 운영 가맹점에 대해서는 재계약 시 가맹비 감면 등의 혜택을 준비하고 있습니다. 세부 계약 조건은 가맹정의서에 따라 상담 시 안내드립니다.',
+    },
   ];
 
   return (
@@ -1178,7 +1255,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 px-4 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src="https://picsum.photos/seed/korean-restaurant-blur/1920/1080" className="w-full h-full object-cover opacity-20" alt="Background" />
+        <img src="/images/common/%EC%A0%84%EC%B2%B4%EC%83%B7.webp" className="w-full h-full object-cover opacity-20" alt="Background" />
         <div className="absolute inset-0 bg-primary/90" />
       </div>
 

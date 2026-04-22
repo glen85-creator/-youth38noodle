@@ -69,19 +69,30 @@ const Proposal = () => {
           <div className="story-copy">
             <h3>부모의 마음을<br />한 그릇에</h3>
             <p>
-              청년38국수는 단순한 저가 국수가 아닙니다.<br />
-              바쁜 현대인의 식탁에서 점점 사라져 가는 <strong>'어머니의 국수 한 그릇'</strong>을
-              소환하여, 언제 어디서나 건강하고 정직한 한 끼를 제공하겠다는 철학에서 출발했습니다.
+              편의점 간편식과 배달 음식 사이에서 <strong>든든한 한 끼</strong>를 챙기지 못하는
+              청년들에게 <strong>"집에서 차려주던 따뜻한 국수 한 그릇"</strong>을 그대로 건네고 싶었습니다.
             </p>
             <p>
-              <strong>20년 이상의 노하우로 만든 생면</strong>, 매일 새벽 직접 우려내는 정직한 육수.
-              패스트푸드의 편의성과 한식의 정성을 동시에 담아낸 브랜드입니다.
+              시그니처 <strong>38국수 3,800원부터</strong>, 전 메뉴 3,800~8,800원. 부담 없는 가격 안에{' '}
+              <strong>정직한 재료</strong>와 <strong>제대로 된 한식의 기본</strong>을 담았습니다.
+              청년38국수는 한 끼를 파는 일이 아니라, <strong>청년의 하루를 지키는 일</strong>이라 믿습니다.
             </p>
           </div>
-          <div className="story-tags">
-            {['🌿 자연', '🏡 따뜻함', '💚 건강', '⏳ 정성'].map(tag => (
-              <span key={tag}>{tag}</span>
-            ))}
+          <div className="story-values">
+            <div className="value-item"><div className="value-label">부모의 마음</div><div className="value-desc">따뜻한 한 끼로 청년의 하루를</div></div>
+            <div className="value-item"><div className="value-label">정직한 가격</div><div className="value-desc">3,800원부터, 부담 없이</div></div>
+            <div className="value-item"><div className="value-label">한식의 기본</div><div className="value-desc">냉동·건조 없는 생면과 육수</div></div>
+            <div className="value-item"><div className="value-label">상생의 철학</div><div className="value-desc">본사 노마진으로 함께</div></div>
+          </div>
+        </div>
+
+        <div className="differentiators">
+          <div className="diff-title">다른 국수 프랜차이즈와 무엇이 다른가</div>
+          <div className="diff-grid">
+            <div className="diff-item"><strong>① 본사 노마진 정책</strong> — 식재료 공급에서 별도 마진을 취하지 않습니다.</div>
+            <div className="diff-item"><strong>② 본사 보증금 없음</strong> — 창업 초기 부담을 본사가 함께 덜어냅니다.</div>
+            <div className="diff-item"><strong>③ 100원 기부 선순환</strong> — 매장이 팔수록 청년 사회가 함께 성장합니다.</div>
+            <div className="diff-item"><strong>④ 지역 연계 확장 모델</strong> — 공공·지역 기관과 협업하는 성장 경로 제공.</div>
           </div>
         </div>
 
@@ -117,20 +128,34 @@ const Proposal = () => {
 
         <div className="donation-partners">
           <div className="partner-card">
-            <div className="partner-label">교육 지원</div>
+            <div className="partner-label">PARTNER 01 · 교육 지원</div>
             <h4>레인코리아</h4>
-            <p>글로벌 학교를 운영하는 청년 교육 기관. 청년38국수의 기부가 청년들의 배움의 기회로 이어집니다.</p>
+            <div className="partner-quote">"교육이 바뀌면, 사회가 바뀝니다."</div>
+            <p>
+              탈북·다문화 청년과 배움의 기회가 부족한 청소년을 위해{' '}
+              <strong>글로벌 학교</strong>를 운영하는 교육 기관입니다.
+              한 그릇의 기부가 한 청년의 <strong>다음 한 학기</strong>가 되어,
+              더 넓은 세상으로 나아갈 발판이 됩니다.
+            </p>
+            <div className="partner-foot">기부가 닿는 곳 · 청년 교육과 배움의 기회</div>
           </div>
           <div className="partner-card">
-            <div className="partner-label">커뮤니티 지원</div>
+            <div className="partner-label">PARTNER 02 · 커뮤니티 지원</div>
             <h4>청년문간</h4>
-            <p>3,000원 김치찌개를 운영하는 청년 커뮤니티. 청년들이 배부르게 한 끼를 해결할 수 있도록 힘을 보탭니다.</p>
+            <div className="partner-quote">"한 끼가 누군가에게는 하루를 지키는 힘이 됩니다."</div>
+            <p>
+              <strong>3,000원 김치찌개</strong>로 주머니 사정이 어려운 청년과 지역 이웃에게
+              따뜻한 식사를 건네는 사회적 식당입니다.
+              청년38국수의 기부는 이곳에서 <strong>오늘의 한 끼</strong>가 되어,
+              누군가의 내일을 든든하게 받쳐 줍니다.
+            </p>
+            <div className="partner-foot">기부가 닿는 곳 · 청년 식사 지원과 커뮤니티</div>
           </div>
         </div>
 
         <div className="donation-note">
-          <strong>지역연계형 매장</strong>에서는 기부가 <strong>청년 + 지역</strong>에 환원되어,
-          지역 경제 활성화와 로컬 커뮤니티에도 기여합니다.
+          <strong>지역연계형 매장(다산38국수 등)</strong>에서는 기부가 <strong>청년 + 지역</strong>에 환원되어,
+          지역 경제 활성화와 로컬 커뮤니티에도 기여합니다. 가맹점주의 추가 부담 없이, 본사 차원에서 집계·전달됩니다.
         </div>
       </section>
 
@@ -227,6 +252,19 @@ const Proposal = () => {
             <p>고정 유동인구가 확보된 특수 입지</p>
           </div>
         </div>
+
+        <div className="subsection-title">현재 운영 현황</div>
+        <table className="store-table">
+          <thead>
+            <tr><th>매장</th><th>위치</th><th>모델 타입</th><th>오픈 상태</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>청년38국수 문정점</strong> (1호)</td><td>서울 송파구 문정동</td><td>커뮤니티형</td><td>운영중</td></tr>
+            <tr><td><strong>다산38국수 다산점</strong> (2호)</td><td>경기 남양주 다산신도시</td><td>지역연계형 · GH 협력</td><td>운영중</td></tr>
+            <tr><td><strong>청년38국수 월평점</strong> (3호)</td><td>대전 월평동</td><td>가맹형</td><td>운영중</td></tr>
+            <tr><td><strong>청년38국수 구디점</strong></td><td>서울 구로구 구로디지털단지</td><td>커뮤니티형</td><td>2026년 6월 초 오픈 예정</td></tr>
+          </tbody>
+        </table>
       </section>
 
       {/* ==================== 6페이지: 가맹 프로세스 + 투자·수익 ==================== */}

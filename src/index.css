@@ -257,6 +257,49 @@
   font-size: 11pt; font-weight: 700;
   color: var(--color-primary);
 }
+.story-values {
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+  align-self: center;
+}
+.story-values .value-item {
+  border-left: 2px solid var(--color-secondary);
+  padding-left: 12px;
+}
+.story-values .value-label {
+  font-family: "Noto Serif KR", serif;
+  font-size: 11pt; font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+.story-values .value-desc {
+  font-size: 8.5pt; line-height: 1.4;
+  color: rgba(26,18,8,0.65);
+}
+
+.differentiators {
+  margin-top: 18px;
+  background: #fbf9f6;
+  border: 1px dashed rgba(131,90,60,0.35);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+.differentiators .diff-title {
+  font-family: "Noto Serif KR", serif;
+  font-size: 11pt; font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+.differentiators .diff-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px;
+}
+.differentiators .diff-item {
+  font-size: 9pt; line-height: 1.5;
+  color: rgba(26,18,8,0.78);
+}
+.differentiators .diff-item strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
 
 .metrics-row {
   display: grid; grid-template-columns: repeat(4, 1fr);
@@ -348,8 +391,22 @@
   color: var(--color-primary);
 }
 .partner-card p {
-  font-size: 9.5pt; line-height: 1.6; margin: 0;
+  font-size: 9.5pt; line-height: 1.6; margin: 0 0 8px;
   color: rgba(26,18,8,0.75);
+}
+.partner-quote {
+  font-family: "Noto Serif KR", serif;
+  font-size: 10pt; font-weight: 700;
+  color: var(--color-primary);
+  padding: 6px 0 8px;
+  border-bottom: 1px solid rgba(131,90,60,0.15);
+  margin-bottom: 10px;
+}
+.partner-foot {
+  border-top: 1px dashed rgba(131,90,60,0.18);
+  padding-top: 6px;
+  font-size: 8pt;
+  color: rgba(26,18,8,0.55);
 }
 .donation-note {
   background: var(--color-secondary);
@@ -477,6 +534,34 @@
   font-size: 9pt; font-weight: 700;
   color: var(--color-secondary);
   margin-bottom: 6px;
+}
+
+.store-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin-top: 8px;
+}
+.store-table thead th {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 9pt;
+  letter-spacing: 0.02em;
+}
+.store-table tbody td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(131,90,60,0.15);
+  line-height: 1.45;
+  color: rgba(26,18,8,0.82);
+}
+.store-table tbody tr:nth-child(odd) td {
+  background: #fbf9f6;
+}
+.store-table tbody td strong {
+  color: var(--color-primary);
 }
 
 /* ---------- Process ---------- */
