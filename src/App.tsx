@@ -61,7 +61,7 @@ const Navbar = () => {
             rel="noreferrer"
             className={`flex items-center gap-2 font-bold px-4 py-2 rounded-full transition-all border ${isScrolled ? 'border-primary/30 text-primary hover:bg-primary/10' : 'border-white/40 text-white hover:bg-white/10'}`}
           >
-            <FileDown size={16} /> 제안서
+            <FileDown size={16} /> 브랜드 설명서
           </a>
           <a
             href="#contact"
@@ -106,7 +106,7 @@ const Navbar = () => {
               className="border-2 border-primary text-primary py-3 rounded-lg text-center font-bold flex items-center justify-center gap-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              <FileDown size={18} /> 제안서 다운로드
+              <FileDown size={18} /> 브랜드 설명서 다운로드
             </a>
             <a
               href="#contact"

@@ -7,72 +7,103 @@ import React from 'react';
 import { Printer, Phone, CheckCircle2, Award, TrendingUp, Users, Wallet, Handshake, Heart, Store, Zap, BookOpen, Globe, MapPin } from 'lucide-react';
 
 /**
- * 청년38국수 가맹영업 제안서 — 인쇄/PDF 전용 뷰
+ * 청년38국수 브랜드 설명서 — 인쇄/PDF 전용 뷰
  * 접근: /?view=proposal
  * A4 세로 기준 @media print 최적화
  */
 
-// 전체 메뉴 데이터 — 랜딩과 동일한 소스
+// 전체 메뉴 데이터 — 랜딩과 동일한 소스 (파일명은 raw Korean, 브라우저/번들러가 인코딩 처리)
 const MENU_DATA: { category: string; categoryEn: string; items: { name: string; price: string; img: string; desc: string }[] }[] = [
   {
     category: '따뜻한 국수',
     categoryEn: 'Warm Noodles',
     items: [
-      { name: '38국수 (대표)', price: '3,800원', img: '/images/menu/[%EB%94%B0%EB%9C%BB%ED%95%9C%EA%B5%AD%EC%88%98]38%EA%B5%AD%EC%88%98.webp', desc: '멸치 육수, 맑고 구수한 국물' },
-      { name: '김치국수', price: '5,800원', img: '/images/menu/[%EB%94%B0%EB%9C%BB%ED%95%9C%EA%B5%AD%EC%88%98]%EA%B9%80%EC%B9%98%EA%B5%AD%EC%88%98.webp', desc: '새콤한 김치와 시원한 맛' },
-      { name: '어묵국수', price: '5,800원', img: '/images/menu/[%EB%94%B0%EB%9C%BB%ED%95%9C%EA%B5%AD%EC%88%98]%EC%96%B4%EB%AC%B5%EA%B5%AD%EC%88%98.webp', desc: '푸짐한 어묵의 든든한 국수' },
-      { name: '얼큰어묵국수', price: '6,800원', img: '/images/menu/%EC%96%BC%ED%81%B0%EC%96%B4%EB%AC%B5%EA%B5%AD%EC%88%98.webp', desc: '매콤한 육수와 어묵의 조화' },
-      { name: '비빔국수', price: '6,800원', img: '/images/menu/[%EB%94%B0%EB%9C%BB%ED%95%9C%EA%B5%AD%EC%88%98]%EB%B9%84%EB%B9%94%EA%B5%AD%EC%88%98.webp', desc: '과일소스의 새콤달콤' },
-      { name: '얼큰국수', price: '5,800원', img: '/images/menu/[%EB%94%B0%EB%9C%BB%ED%95%9C%EA%B5%AD%EC%88%98]%EC%96%BC%ED%81%B0%EA%B5%AD%EC%88%98.webp', desc: '속이 확 풀리는 얼큰한 국물' },
-      { name: '소고기국수', price: '7,800원', img: '/images/menu/%EC%86%8C%EA%B3%A0%EA%B8%B0%EA%B5%AD%EC%88%98_N.webp', desc: '소고기 고명 듬뿍, 진한 맛' },
-      { name: '얼큰고기국수', price: '7,800원', img: '/images/menu/%EC%96%BC%ED%81%B0%EA%B3%A0%EA%B8%B0%EA%B5%AD%EC%88%98_N.webp', desc: '매콤한 육수 + 소고기 보양' },
+      { name: '38국수 (대표)', price: '3,800원', img: '/images/menu/[따뜻한국수]38국수.webp', desc: '멸치 육수, 맑고 구수한 국물' },
+      { name: '김치국수', price: '5,800원', img: '/images/menu/[따뜻한국수]김치국수.webp', desc: '새콤한 김치와 시원한 맛' },
+      { name: '어묵국수', price: '5,800원', img: '/images/menu/[따뜻한국수]어묵국수.webp', desc: '푸짐한 어묵의 든든한 국수' },
+      { name: '얼큰어묵국수', price: '6,800원', img: '/images/menu/얼큰어묵국수.webp', desc: '매콤한 육수와 어묵의 조화' },
+      { name: '비빔국수', price: '6,800원', img: '/images/menu/[따뜻한국수]비빔국수.webp', desc: '과일소스의 새콤달콤' },
+      { name: '얼큰국수', price: '5,800원', img: '/images/menu/[따뜻한국수]얼큰국수.webp', desc: '속이 확 풀리는 얼큰한 국물' },
+      { name: '소고기국수', price: '7,800원', img: '/images/menu/소고기국수_N.webp', desc: '소고기 고명 듬뿍, 진한 맛' },
+      { name: '얼큰고기국수', price: '7,800원', img: '/images/menu/얼큰고기국수_N.webp', desc: '매콤한 육수 + 소고기 보양' },
     ],
   },
   {
     category: '칼국수',
     categoryEn: 'Kalguksu',
     items: [
-      { name: '칼국수', price: '5,800원', img: '/images/menu/%EC%B9%BC%EA%B5%AD%EC%88%98.webp', desc: '정통 담백 칼국수' },
-      { name: '얼큰칼국수', price: '6,800원', img: '/images/menu/%EC%96%BC%ED%81%B0%EC%B9%BC%EA%B5%AD%EC%88%98.webp', desc: '칼칼한 얼큰 국물' },
-      { name: '들깨칼국수', price: '7,800원', img: '/images/menu/%EB%93%A4%EA%B9%A8%EC%B9%BC%EA%B5%AD%EC%88%98.webp', desc: '고소한 들깨 건강식' },
-      { name: '우육칼국수', price: '7,800원', img: '/images/menu/%EC%9A%B0%EC%9C%A1%EC%B9%BC%EA%B5%AD%EC%88%98.webp', desc: '진한 소고기 육수' },
-      { name: '감자칼국수', price: '8,800원', img: '/images/menu/%EA%B0%90%EC%9E%90%EC%B9%BC%EA%B5%AD%EC%88%98.webp', desc: '강원도 감자의 구수함' },
-      { name: '낙지볶음칼국수', price: '8,800원', img: '/images/menu/%EB%82%99%EC%A7%80%EB%B3%B6%EC%9D%8C%EC%B9%BC%EA%B5%AD%EC%88%98.webp', desc: '매콤한 낙지볶음의 만남' },
+      { name: '칼국수', price: '5,800원', img: '/images/menu/칼국수.webp', desc: '정통 담백 칼국수' },
+      { name: '얼큰칼국수', price: '6,800원', img: '/images/menu/얼큰칼국수.webp', desc: '칼칼한 얼큰 국물' },
+      { name: '들깨칼국수', price: '7,800원', img: '/images/menu/들깨칼국수.webp', desc: '고소한 들깨 건강식' },
+      { name: '우육칼국수', price: '7,800원', img: '/images/menu/우육칼국수.webp', desc: '진한 소고기 육수' },
+      { name: '감자칼국수', price: '8,800원', img: '/images/menu/감자칼국수.webp', desc: '강원도 감자의 구수함' },
+      { name: '낙지볶음칼국수', price: '8,800원', img: '/images/menu/낙지볶음칼국수.webp', desc: '매콤한 낙지볶음의 만남' },
     ],
   },
   {
     category: '여름 메뉴',
     categoryEn: 'Summer',
     items: [
-      { name: '콩국수', price: '7,800원', img: '/images/menu/[%EC%8B%9C%EC%9B%90%ED%95%9C%EA%B5%AD%EC%88%98]%EC%BD%A9%EA%B5%AD%EC%88%98.webp', desc: '직접 갈아 만든 진한 콩물' },
-      { name: '열무국수', price: '7,800원', img: '/images/menu/[%EC%8B%9C%EC%9B%90%ED%95%9C%EA%B5%AD%EC%88%98]%EC%97%B4%EB%AC%B4%EA%B5%AD%EC%88%98.webp', desc: '아삭한 열무김치 국수' },
-      { name: '냉국수', price: '6,800원', img: '/images/menu/[%EC%8B%9C%EC%9B%90%ED%95%9C%EA%B5%AD%EC%88%98]%EB%83%89%EA%B5%AD%EC%88%98.webp', desc: '살얼음 동동 시원한 맛' },
-      { name: '물냉면', price: '6,800원', img: '/images/menu/[%EC%8B%9C%EC%9B%90%ED%95%9C%EA%B5%AD%EC%88%98]%EB%AC%BC%EB%83%89%EB%A9%B4.webp', desc: '시원하게 가슴까지' },
-      { name: '비빔냉면', price: '7,800원', img: '/images/menu/[%EC%8B%9C%EC%9B%90%ED%95%9C%EA%B5%AD%EC%88%98]%EB%B9%84%EB%B9%94%EB%83%89%EB%A9%B4.webp', desc: '매콤달콤한 양념 비빔' },
+      { name: '콩국수', price: '7,800원', img: '/images/menu/[시원한국수]콩국수.webp', desc: '직접 갈아 만든 진한 콩물' },
+      { name: '열무국수', price: '7,800원', img: '/images/menu/[시원한국수]열무국수.webp', desc: '아삭한 열무김치 국수' },
+      { name: '냉국수', price: '6,800원', img: '/images/menu/[시원한국수]냉국수.webp', desc: '살얼음 동동 시원한 맛' },
+      { name: '물냉면', price: '6,800원', img: '/images/menu/[시원한국수]물냉면.webp', desc: '시원하게 가슴까지' },
+      { name: '비빔냉면', price: '7,800원', img: '/images/menu/[시원한국수]비빔냉면.webp', desc: '매콤달콤한 양념 비빔' },
     ],
   },
   {
     category: '스페셜 · 덮밥',
     categoryEn: 'Rice · Special',
     items: [
-      { name: '김치찌개돈까스', price: '7,800원', img: '/images/menu/%EA%B9%80%EC%B9%98%EC%B0%8C%EA%B0%9C%EB%8F%88%EA%B9%8C%EC%8A%A4.webp', desc: '얼큰 김치찌개 + 바삭 돈까스' },
-      { name: '매콤제육덮밥', price: '4,800원', img: '/images/menu/[%EB%AF%B8%EB%8B%88%EB%8D%AE%EB%B0%A5]%EB%A7%A4%EC%BD%A4%EC%A0%9C%EC%9C%A1%EB%8D%AE%EB%B0%A5.webp', desc: '불맛 가득 제육 덮밥' },
-      { name: '파닭마요덮밥', price: '4,800원', img: '/images/menu/[%EB%AF%B8%EB%8B%88%EB%8D%AE%EB%B0%A5]%ED%8C%8C%EB%8B%AD%EB%A7%88%EC%9A%94%EB%8D%AE%EB%B0%A5.webp', desc: '고소한 마요 + 파닭 조합' },
-      { name: '아침愛국밥', price: '3,800원', img: '/images/menu/%EC%95%84%EC%B9%A8%E6%84%9B%EA%B5%AD%EB%B0%A5.webp', desc: '아침을 여는 따뜻한 국밥' },
-      { name: '계란후라이밥', price: '2,800원', img: '/images/menu/%EA%B3%84%EB%9E%80%ED%9B%84%EB%9D%BC%EC%9D%B4%EB%B0%A5.webp', desc: '간단·든든 계란밥' },
+      { name: '김치찌개돈까스', price: '7,800원', img: '/images/menu/김치찌개돈까스.webp', desc: '얼큰 김치찌개 + 바삭 돈까스' },
+      { name: '매콤제육덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]매콤제육덮밥.webp', desc: '불맛 가득 제육 덮밥' },
+      { name: '파닭마요덮밥', price: '4,800원', img: '/images/menu/[미니덮밥]파닭마요덮밥.webp', desc: '고소한 마요 + 파닭 조합' },
+      { name: '아침愛국밥', price: '3,800원', img: '/images/menu/아침愛국밥.webp', desc: '아침을 여는 따뜻한 국밥' },
+      { name: '계란후라이밥', price: '2,800원', img: '/images/menu/계란후라이밥.webp', desc: '간단·든든 계란밥' },
     ],
   },
   {
     category: '곁들임',
     categoryEn: 'Sides',
     items: [
-      { name: '미니치즈돈까스', price: '4,800원', img: '/images/menu/[%EA%B2%89%EB%93%A4%EC%9E%84]%EB%AF%B8%EB%8B%88%EC%B9%98%EC%A6%88%EB%8F%88%EA%B9%8C%EC%8A%A4.webp', desc: '치즈 듬뿍 미니 돈까스' },
-      { name: '미니돈까스', price: '3,800원', img: '/images/menu/[%EA%B2%89%EB%93%A4%EC%9E%84]%EB%AF%B8%EB%8B%88%EB%8F%88%EA%B9%8C%EC%8A%A4.webp', desc: '바삭 미니 돈까스' },
-      { name: '직화불고기', price: '3,800원', img: '/images/menu/[%EA%B2%89%EB%93%A4%EC%9E%84]%EC%A7%81%ED%99%94%EB%B6%88%EA%B3%A0%EA%B8%B0.webp', desc: '직화 불향의 불고기' },
-      { name: '튀김만두', price: '3,800원', img: '/images/menu/%ED%8A%80%EA%B9%80%EB%A7%8C%EB%91%90.webp', desc: '겉바속촉 고소한 만두' },
-      { name: '팝콘군만두', price: '3,800원', img: '/images/menu/%ED%8C%9D%EC%BD%98%EA%B5%B0%EB%A7%8C%EB%91%90.webp', desc: '한입 쏙 팝콘 만두' },
-      { name: '꼬맹이물만두', price: '3,800원', img: '/images/menu/[%EA%B2%89%EB%93%A4%EC%9E%84]%EB%AC%BC%EB%A7%8C%EB%91%90.webp', desc: '부드럽고 촉촉한 물만두' },
+      { name: '미니치즈돈까스', price: '4,800원', img: '/images/menu/[곁들임]미니치즈돈까스.webp', desc: '치즈 듬뿍 미니 돈까스' },
+      { name: '미니돈까스', price: '3,800원', img: '/images/menu/[곁들임]미니돈까스.webp', desc: '바삭 미니 돈까스' },
+      { name: '직화불고기', price: '3,800원', img: '/images/menu/[곁들임]직화불고기.webp', desc: '직화 불향의 불고기' },
+      { name: '튀김만두', price: '3,800원', img: '/images/menu/튀김만두.webp', desc: '겉바속촉 고소한 만두' },
+      { name: '팝콘군만두', price: '3,800원', img: '/images/menu/팝콘군만두.webp', desc: '한입 쏙 팝콘 만두' },
+      { name: '꼬맹이물만두', price: '3,800원', img: '/images/menu/[곁들임]물만두.webp', desc: '부드럽고 촉촉한 물만두' },
     ],
+  },
+];
+
+// 매장 갤러리 데이터
+const STORE_GALLERY: { name: string; model: string; loc: string; status: string; exterior: string; interior: string; note?: string }[] = [
+  {
+    name: '청년38국수 문정점',
+    model: '커뮤니티형 · 1호점',
+    loc: '서울 송파구 문정동',
+    status: '운영중',
+    exterior: '/images/stores/munjeong/exterior.webp',
+    interior: '/images/stores/munjeong/interior.webp',
+    note: '브랜드 1호점 · 지역 커뮤니티 거점',
+  },
+  {
+    name: '다산38국수 다산점',
+    model: '지역연계형 · 2호점',
+    loc: '경기 남양주 다산신도시',
+    status: 'GH 공간복지홈 협력 · 운영중',
+    exterior: '/images/stores/dasan/exterior.webp',
+    interior: '/images/stores/dasan/interior.webp',
+    note: '경기도시개발공사(GH) 공간복지홈 협력 · 로컬 브랜드로 운영',
+  },
+  {
+    name: '청년38국수 월평점',
+    model: '가맹형 · 3호점',
+    loc: '대전 월평동',
+    status: '운영중',
+    exterior: '/images/stores/wolpyeong/exterior.webp?v=2',
+    interior: '/images/stores/wolpyeong/interior.webp?v=2',
+    note: '대전 지역 첫 가맹점',
   },
 ];
 
@@ -93,7 +124,7 @@ const Proposal = () => {
       <div className="proposal-toolbar print:hidden sticky top-0 z-50 bg-dark text-white py-3 px-6 flex items-center justify-between shadow-lg">
         <div className="flex items-center gap-3">
           <img src="/images/common/38%EA%B5%AD%EC%88%98%20%EC%97%A0%EB%B8%94%EB%9F%BC.png" className="h-8 w-8 rounded-full bg-white p-0.5" alt="로고" />
-          <span className="font-serif font-bold">청년38국수 가맹영업 제안서</span>
+          <span className="font-serif font-bold">청년38국수 브랜드 설명서</span>
         </div>
         <div className="flex items-center gap-3">
           <button onClick={handlePrint} className="bg-accent text-white px-5 py-2 rounded-full font-bold flex items-center gap-2 hover:bg-opacity-90 transition">
@@ -114,12 +145,12 @@ const Proposal = () => {
           </div>
           <div className="cover-title">
             <div className="cover-sub">부모의 따뜻한 마음을 한 그릇에</div>
-            <h1>가맹영업 제안서</h1>
-            <div className="cover-tag">FRANCHISE PROPOSAL</div>
+            <h1>브랜드 설명서</h1>
+            <div className="cover-tag">BRAND GUIDE</div>
           </div>
           <div className="cover-footer">
             <div>발행일 {today}</div>
-            <div>주식회사 HBS · Happy Bridge Sudogwon Co., Ltd.</div>
+            <div>주식회사 HBS</div>
           </div>
         </div>
       </section>
@@ -437,10 +468,54 @@ const Proposal = () => {
         </table>
       </section>
 
-      {/* ==================== 7페이지: 가맹 프로세스 + 투자·수익 ==================== */}
+      {/* ==================== 7페이지: 매장 갤러리 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
           <div className="page-number">06</div>
+          <div className="page-title">
+            <h2>매장 갤러리</h2>
+            <div className="page-sub">STORE GALLERY · 직영·가맹 운영 매장</div>
+          </div>
+        </header>
+
+        <p className="section-intro">
+          각 매장은 상권과 컨셉에 맞는 인테리어를 공유합니다. 따뜻한 우드톤과 로고 월을 중심으로,
+          한국식 국수집의 정갈함과 편안함을 일관되게 유지합니다.
+        </p>
+
+        <div className="gallery-list">
+          {STORE_GALLERY.map((s) => (
+            <div key={s.name} className="gallery-row">
+              <div className="gallery-info">
+                <div className="gallery-label">{s.model}</div>
+                <h4>{s.name}</h4>
+                <div className="gallery-loc"><MapPin size={12} /> {s.loc}</div>
+                <div className="gallery-status">{s.status}</div>
+                {s.note && <div className="gallery-note">{s.note}</div>}
+              </div>
+              <div className="gallery-photos">
+                <div className="gallery-photo">
+                  <img src={s.exterior} alt={`${s.name} 외관`} />
+                  <div className="gallery-caption">외관</div>
+                </div>
+                <div className="gallery-photo">
+                  <img src={s.interior} alt={`${s.name} 내부`} />
+                  <div className="gallery-caption">내부</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="gallery-footnote">
+          ※ 구디점(커뮤니티형, 서울 구로디지털단지)은 2026년 6월 초 오픈 예정으로 사진은 추후 공개됩니다.
+        </div>
+      </section>
+
+      {/* ==================== 8페이지: 가맹 프로세스 + 투자·수익 ==================== */}
+      <section className="proposal-page">
+        <header className="page-header">
+          <div className="page-number">07</div>
           <div className="page-title">
             <h2>가맹 프로세스 & 투자</h2>
             <div className="page-sub">FRANCHISE PROCESS & INVESTMENT</div>
@@ -496,10 +571,10 @@ const Proposal = () => {
         </div>
       </section>
 
-      {/* ==================== 8페이지: 본사 지원 ==================== */}
+      {/* ==================== 9페이지: 본사 지원 + FAQ ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">07</div>
+          <div className="page-number">08</div>
           <div className="page-title">
             <h2>본사 지원 · 상생 제도</h2>
             <div className="page-sub">SUPPORT & PARTNERSHIP</div>
@@ -555,10 +630,10 @@ const Proposal = () => {
         </div>
       </section>
 
-      {/* ==================== 9페이지: 상담 & 연락처 ==================== */}
+      {/* ==================== 10페이지: 상담 & 연락처 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">08</div>
+          <div className="page-number">09</div>
           <div className="page-title">
             <h2>상담 안내</h2>
             <div className="page-sub">CONTACT</div>
@@ -580,7 +655,7 @@ const Proposal = () => {
             <div className="company-info">
               <div className="ci-logo"><img src="/images/common/38%EA%B5%AD%EC%88%98%20%EC%97%A0%EB%B8%94%EB%9F%BC.png" alt="로고" /></div>
               <div className="ci-name">주식회사 HBS</div>
-              <div className="ci-en">HBS Co., Ltd.<br />(Happy Bridge Sudogwon)</div>
+              <div className="ci-en">HBS Co., Ltd.</div>
               <div className="ci-detail">
                 <div>대표 이구승</div>
                 <div>서울특별시 광진구 천호대로 615 2층</div>
@@ -592,7 +667,7 @@ const Proposal = () => {
         </div>
 
         <div className="proposal-footer">
-          본 제안서는 가맹 상담을 위한 소개 자료이며, 구체적인 계약 조건·수치는 가맹 상담 시 별도 안내드립니다.<br />
+          본 설명서는 브랜드·가맹 안내를 위한 소개 자료이며, 구체적인 계약 조건·수치는 가맹 상담 시 별도 안내드립니다.<br />
           © 2026 청년38국수 · 주식회사 HBS. All rights reserved.
         </div>
       </section>

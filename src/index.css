@@ -81,7 +81,7 @@
 }
 
 /* =========================================================
-   PROPOSAL VIEW (청년38국수 가맹영업 제안서)
+   PROPOSAL VIEW (청년38국수 브랜드 설명서)
    A4 세로 기준 · 화면 & 인쇄 겸용
    ========================================================= */
 
@@ -687,6 +687,93 @@
   margin-right: 2px;
 }
 .faq-a strong { color: var(--color-primary); font-weight: 800; }
+
+/* ---------- Store Gallery (proposal) ---------- */
+.gallery-list {
+  display: grid;
+  gap: 14px;
+}
+.gallery-row {
+  display: grid;
+  grid-template-columns: 1.1fr 2fr;
+  gap: 14px;
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.15);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 12px 14px;
+  align-items: center;
+}
+.gallery-info .gallery-label {
+  font-family: "Playfair Display", serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.gallery-info h4 {
+  font-family: "Noto Serif KR", serif;
+  font-size: 12.5pt;
+  font-weight: 900;
+  margin: 0 0 6px;
+  color: var(--color-primary);
+}
+.gallery-loc {
+  font-size: 9pt;
+  color: rgba(26,18,8,0.7);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 3px;
+}
+.gallery-status {
+  font-size: 8.5pt;
+  color: rgba(131,90,60,0.8);
+  background: rgba(200,137,60,0.12);
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.gallery-note {
+  font-size: 8.2pt;
+  color: rgba(26,18,8,0.55);
+  line-height: 1.45;
+}
+.gallery-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.gallery-photo {
+  background: #f2ede4;
+  border: 1px solid rgba(131,90,60,0.12);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.gallery-photo img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+.gallery-photo .gallery-caption {
+  background: #fbf5ec;
+  font-size: 7.5pt;
+  color: rgba(26,18,8,0.6);
+  padding: 3px 8px;
+  text-align: center;
+  border-top: 1px solid rgba(131,90,60,0.1);
+}
+.gallery-footnote {
+  margin-top: 14px;
+  font-size: 8.5pt;
+  text-align: center;
+  color: rgba(26,18,8,0.55);
+  font-style: italic;
+}
 
 /* ---------- Store Types ---------- */
 .type-grid {
