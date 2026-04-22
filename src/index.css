@@ -207,6 +207,20 @@
   font-size: 22pt; font-weight: 900;
   margin: 0; letter-spacing: -0.01em;
 }
+.page-chip {
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  font-size: 10pt;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
+  background: rgba(200,137,60,0.12);
+  border: 1px solid rgba(200,137,60,0.35);
+  border-radius: 999px;
+  padding: 2px 10px;
+  margin-left: 8px;
+  vertical-align: middle;
+  font-weight: 700;
+}
 .page-sub {
   font-family: "Playfair Display", serif;
   font-size: 9pt; letter-spacing: 0.3em;
@@ -460,12 +474,15 @@
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid rgba(131,90,60,0.12);
+  background: #f2ede4;
 }
 .press-photo-row img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 340px;
+  object-fit: contain;
+  object-position: center;
   display: block;
+  background: #f2ede4;
 }
 .press-caption {
   background: #fbf5ec;
@@ -473,6 +490,7 @@
   color: rgba(26,18,8,0.6);
   padding: 5px 10px;
   border-top: 1px solid rgba(131,90,60,0.1);
+  text-align: center;
 }
 .press-lede {
   border-left: 3px solid var(--color-secondary);
@@ -532,6 +550,10 @@
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
+.menu-grid-4 {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
 .menu-card {
   background: #fbf9f6;
   border: 1px solid rgba(131,90,60,0.15);
@@ -541,28 +563,130 @@
 .menu-card img {
   width: 100%; height: 100px; object-fit: cover; display: block;
 }
+.menu-grid-4 .menu-card img { height: 78px; }
 .menu-info {
   padding: 10px 12px;
 }
+.menu-grid-4 .menu-info { padding: 6px 8px 8px; }
 .menu-top {
   display: flex; justify-content: space-between; align-items: baseline;
   margin-bottom: 4px;
+  gap: 4px;
 }
 .menu-name {
   font-family: "Noto Serif KR", serif;
   font-size: 10.5pt; font-weight: 700;
 }
+.menu-grid-4 .menu-name { font-size: 8.8pt; line-height: 1.2; }
 .menu-price {
   font-size: 10pt; font-weight: 700; color: var(--color-accent);
+  white-space: nowrap;
 }
+.menu-grid-4 .menu-price { font-size: 8.5pt; }
 .menu-desc {
   font-size: 8.5pt; color: rgba(26,18,8,0.6); line-height: 1.4;
 }
+.menu-grid-4 .menu-desc { font-size: 7.2pt; line-height: 1.35; }
 .menu-note {
   margin-top: 14px;
   font-size: 9pt; text-align: center;
   color: rgba(26,18,8,0.5);
 }
+.menu-category {
+  margin-bottom: 16px;
+}
+.menu-category:last-child { margin-bottom: 0; }
+.menu-category-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  border-bottom: 1.5px solid var(--color-primary);
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+.menu-category-head h4 {
+  font-family: "Noto Serif KR", serif;
+  font-size: 12pt; font-weight: 900;
+  color: var(--color-primary);
+  margin: 0;
+}
+.menu-category-head .cat-sub {
+  font-family: "Playfair Display", serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.12em;
+  color: rgba(131,90,60,0.6);
+  text-transform: uppercase;
+}
+.menu-category-head .cat-count {
+  margin-left: auto;
+  font-size: 8pt;
+  color: rgba(26,18,8,0.5);
+}
+.menu-intro-box {
+  background: linear-gradient(180deg, #fbf5ec 0%, #f6ede0 100%);
+  border: 1px solid rgba(131,90,60,0.15);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.menu-intro-item {
+  text-align: center;
+}
+.menu-intro-item .mi-label {
+  font-family: "Playfair Display", serif;
+  font-size: 8pt;
+  letter-spacing: 0.15em;
+  color: rgba(131,90,60,0.65);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.menu-intro-item .mi-value {
+  font-family: "Noto Serif KR", serif;
+  font-size: 10.5pt; font-weight: 800;
+  color: var(--color-primary);
+}
+.menu-intro-item .mi-desc {
+  font-size: 8pt; color: rgba(26,18,8,0.65); margin-top: 2px;
+}
+
+/* ---------- FAQ (proposal) ---------- */
+.faq-list {
+  display: grid;
+  gap: 10px;
+}
+.faq-item {
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.15);
+  border-left: 3px solid var(--color-secondary);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.faq-q {
+  font-family: "Noto Serif KR", serif;
+  font-size: 10pt; font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+.faq-q::before {
+  content: "Q. ";
+  color: var(--color-accent);
+  margin-right: 2px;
+}
+.faq-a {
+  font-size: 9pt;
+  line-height: 1.55;
+  color: rgba(26,18,8,0.78);
+}
+.faq-a::before {
+  content: "A. ";
+  color: var(--color-secondary);
+  font-weight: 800;
+  margin-right: 2px;
+}
+.faq-a strong { color: var(--color-primary); font-weight: 800; }
 
 /* ---------- Store Types ---------- */
 .type-grid {
