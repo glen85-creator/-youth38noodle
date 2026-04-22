@@ -255,6 +255,29 @@ const Proposal = () => {
           </div>
         </div>
 
+        <div className="donation-note">
+          <strong>지역연계형 매장(다산38국수 등)</strong>에서는 기부가 <strong>청년 + 지역</strong>에 환원되어,
+          지역 경제 활성화와 로컬 커뮤니티에도 기여합니다. 기부금은 본사 노마진으로 전액 기부처에 전달되며,
+          전달식·후원증서는 매장 앞 고객에게 신뢰의 스토리가 됩니다.
+        </div>
+      </section>
+
+      {/* ==================== 4페이지: 언론 보도 — 청년발전기금 전달식 ==================== */}
+      <section className="proposal-page">
+        <header className="page-header">
+          <div className="page-number">03</div>
+          <div className="page-title">
+            <h2>언론 보도</h2>
+            <div className="page-sub">PRESS · 청년발전기금 전달식</div>
+          </div>
+        </header>
+
+        <p className="section-intro">
+          2025년 6월 27일, 서울 혜화동 청년문간 슬로우점에서 <strong>청년38국수 청년발전기금 전달식</strong>이 개최되었습니다.
+          대표메뉴 38국수 한 그릇마다 적립된 100원은 청년 교육·커뮤니티 기관에 공식 전달되었으며,
+          이는 청년38국수의 <strong>사회적 선순환 모델이 실제로 작동하고 있음</strong>을 보여주는 기록입니다.
+        </p>
+
         <div className="press-card">
           <div className="press-head">
             <div className="press-meta">
@@ -298,18 +321,12 @@ const Proposal = () => {
             </div>
           </div>
         </div>
-
-        <div className="donation-note">
-          <strong>지역연계형 매장(다산38국수 등)</strong>에서는 기부가 <strong>청년 + 지역</strong>에 환원되어,
-          지역 경제 활성화와 로컬 커뮤니티에도 기여합니다. 기부금은 본사 노마진으로 전액 기부처에 전달되며,
-          전달식·후원증서는 매장 앞 고객에게 신뢰의 스토리가 됩니다.
-        </div>
       </section>
 
-      {/* ==================== 4페이지: 전체 메뉴 1/2 — 따뜻한국수 · 칼국수 ==================== */}
+      {/* ==================== 5페이지: 전체 메뉴 1/2 — 따뜻한국수 · 칼국수 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">03</div>
+          <div className="page-number">04</div>
           <div className="page-title">
             <h2>전체 메뉴 <span className="page-chip">1 / 2</span></h2>
             <div className="page-sub">FULL MENU · 따뜻한 국수 · 칼국수</div>
@@ -356,10 +373,10 @@ const Proposal = () => {
         ))}
       </section>
 
-      {/* ==================== 5페이지: 전체 메뉴 2/2 — 여름 · 스페셜 · 곁들임 ==================== */}
+      {/* ==================== 6페이지: 전체 메뉴 2/2 — 여름 · 스페셜 · 곁들임 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">04</div>
+          <div className="page-number">05</div>
           <div className="page-title">
             <h2>전체 메뉴 <span className="page-chip">2 / 2</span></h2>
             <div className="page-sub">FULL MENU · 여름 · 스페셜 · 곁들임</div>
@@ -392,10 +409,10 @@ const Proposal = () => {
         </div>
       </section>
 
-      {/* ==================== 6페이지: 매장 모델 ==================== */}
+      {/* ==================== 7페이지: 매장 모델 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">05</div>
+          <div className="page-number">06</div>
           <div className="page-title">
             <h2>매장 모델</h2>
             <div className="page-sub">STORE MODELS</div>
@@ -468,10 +485,10 @@ const Proposal = () => {
         </table>
       </section>
 
-      {/* ==================== 7페이지: 매장 갤러리 ==================== */}
+      {/* ==================== 8페이지: 매장 갤러리 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">06</div>
+          <div className="page-number">07</div>
           <div className="page-title">
             <h2>매장 갤러리</h2>
             <div className="page-sub">STORE GALLERY · 직영·가맹 운영 매장</div>
@@ -512,10 +529,10 @@ const Proposal = () => {
         </div>
       </section>
 
-      {/* ==================== 8페이지: 가맹 프로세스 + 투자·수익 ==================== */}
+      {/* ==================== 9페이지: 가맹 프로세스 + 투자·수익 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">07</div>
+          <div className="page-number">08</div>
           <div className="page-title">
             <h2>가맹 프로세스 & 투자</h2>
             <div className="page-sub">FRANCHISE PROCESS & INVESTMENT</div>
@@ -571,10 +588,10 @@ const Proposal = () => {
         </div>
       </section>
 
-      {/* ==================== 9페이지: 본사 지원 + FAQ ==================== */}
+      {/* ==================== 10페이지: 본사 지원 + FAQ ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">08</div>
+          <div className="page-number">09</div>
           <div className="page-title">
             <h2>본사 지원 · 상생 제도</h2>
             <div className="page-sub">SUPPORT & PARTNERSHIP</div>
@@ -630,10 +647,10 @@ const Proposal = () => {
         </div>
       </section>
 
-      {/* ==================== 10페이지: 상담 & 연락처 ==================== */}
+      {/* ==================== 11페이지: 상담 & 연락처 ==================== */}
       <section className="proposal-page">
         <header className="page-header">
-          <div className="page-number">09</div>
+          <div className="page-number">10</div>
           <div className="page-title">
             <h2>상담 안내</h2>
             <div className="page-sub">CONTACT</div>
