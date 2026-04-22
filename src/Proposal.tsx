@@ -153,9 +153,54 @@ const Proposal = () => {
           </div>
         </div>
 
+        <div className="press-card">
+          <div className="press-head">
+            <div className="press-meta">
+              <span className="press-badge">📰 PRESS</span>
+              <span className="press-source">한경매거진&북 · 2025.07.16</span>
+            </div>
+            <div className="press-url">magazine.hankyung.com/money/article/202507161980c</div>
+          </div>
+          <div className="press-title">
+            "청년38국수, 청년발전기금 전달식 개최 — 청년의 자립과 삶의 질 향상을 위해"
+          </div>
+          <div className="press-body">
+            <div className="press-photo-row">
+              <img
+                src="/images/press/youth-fund-ceremony.jpg"
+                alt="청년38국수 청년발전기금 전달식 기념사진"
+              />
+              <div className="press-caption">2025.06.27 청년문간 슬로우점 · 청년발전기금 전달식 기념촬영</div>
+            </div>
+            <div className="press-lede">
+              서울 혜화동 <strong>청년문간 슬로우점</strong>에서 개최. 한 그릇당 적립된 100원이
+              <strong> 청년문간사회적협동조합 · 레인코리아</strong> 두 기관에 공식 전달되었습니다.
+            </div>
+            <div className="press-grid">
+              <div className="press-attendees">
+                <div className="press-col-label">전달식 참석</div>
+                <ul>
+                  <li>▲ 청년문간 이문수 가브리엘 신부</li>
+                  <li>▲ HBS 이구승 CEO</li>
+                  <li>▲ 청년38국수 남지훈 CMO</li>
+                  <li>▲ 레인코리아 송인창 소장</li>
+                </ul>
+              </div>
+              <div className="press-quote">
+                "우리가 먹은 국수 한 그릇,<br />또 다른 청년의 내일을 응원합니다"
+              </div>
+            </div>
+            <div className="press-closing">
+              기사는 청년38국수를 <strong>"청년 중심의 사회적 외식 브랜드"</strong>로 소개하며,
+              올해 10개 매장 오픈을 시작으로 <strong>100개 매장 확장 계획</strong>이 공식 보도되었습니다.
+            </div>
+          </div>
+        </div>
+
         <div className="donation-note">
           <strong>지역연계형 매장(다산38국수 등)</strong>에서는 기부가 <strong>청년 + 지역</strong>에 환원되어,
-          지역 경제 활성화와 로컬 커뮤니티에도 기여합니다. 가맹점주의 추가 부담 없이, 본사 차원에서 집계·전달됩니다.
+          지역 경제 활성화와 로컬 커뮤니티에도 기여합니다. 기부금은 본사 노마진으로 전액 기부처에 전달되며,
+          전달식·후원증서는 매장 앞 고객에게 신뢰의 스토리가 됩니다.
         </div>
       </section>
 
@@ -284,7 +329,7 @@ const Proposal = () => {
             ['02', '상권 분석', '본사 무료 상권 분석 1회'],
             ['03', '가맹 계약', '5년 계약 · 본사 보증금 없음'],
             ['04', '인테리어 공사', '본사 디자인 가이드'],
-            ['05', '교육 이수', '점주 + 직원 기초 교육 (2주)'],
+            ['05', '교육 이수', '점주 + 직원 기초 교육 (1주)'],
             ['06', '개점 지원', '본사 개점 지원 동행'],
           ].map(([n, t, d]) => (
             <div key={n} className="process-step">
@@ -342,7 +387,7 @@ const Proposal = () => {
             { icon: <Users size={22} />, t: '전담 슈퍼바이저', d: '권역별 1명 배정 · 월 2회 정기 방문' },
             { icon: <Globe size={22} />, t: '통합 운영 시스템', d: 'POS · 발주 · 정산 통합' },
             { icon: <Zap size={22} />, t: '마케팅 지원', d: 'SNS 광고 · 시즌 메뉴 · 배달 플랫폼' },
-            { icon: <BookOpen size={22} />, t: '교육 프로그램', d: '2주 기초 교육 · 온라인 지속 학습' },
+            { icon: <BookOpen size={22} />, t: '교육 프로그램', d: '1주 기초 교육 · 온라인 지속 학습' },
             { icon: <Handshake size={22} />, t: '상생 지원 제도', d: '청년 창업자 · 재계약 가맹비 감면' },
           ].map((s, i) => (
             <div key={i} className="support-card">

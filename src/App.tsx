@@ -567,6 +567,85 @@ const DonationStory = () => {
           </div>
         </motion.div>
 
+        {/* Press article — 청년발전기금 전달식 (한경매거진&북 2025.07.16) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl shadow-lg border border-primary/15 mb-10 overflow-hidden"
+        >
+          {/* Newspaper header strip */}
+          <div className="bg-dark text-white px-6 md:px-8 py-4 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-lg">📰</div>
+              <div>
+                <div className="text-[10px] font-black tracking-widest text-secondary">PRESS · 언론 보도</div>
+                <div className="text-sm font-bold">한경매거진&북 <span className="text-white/50 font-normal">· 2025.07.16</span></div>
+              </div>
+            </div>
+            <a
+              href="https://magazine.hankyung.com/money/article/202507161980c"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold text-secondary hover:text-white transition-colors"
+            >
+              원문 기사 보기 ↗
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+            {/* Ceremony photo */}
+            <figure className="lg:col-span-2 bg-dark/5 relative">
+              <img
+                src="/images/press/youth-fund-ceremony.webp"
+                alt="청년38국수 청년발전기금 전달식 기념사진 — 청년문간 이문수 신부, HBS 이구승 CEO, 청년38국수 남지훈 CMO, 레인코리아 송인창 소장 등"
+                className="w-full h-full object-cover min-h-[280px] lg:min-h-[420px]"
+                loading="lazy"
+              />
+              <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/85 to-transparent text-white text-xs px-4 py-3 leading-snug">
+                2025.06.27 청년문간 슬로우점 · 청년발전기금 전달식 기념촬영
+              </figcaption>
+            </figure>
+
+            {/* Article body */}
+            <div className="lg:col-span-3 p-6 md:p-10">
+              <h4 className="text-xl md:text-2xl font-serif font-black mb-4 leading-snug text-dark">
+                "청년38국수, 청년들의 자립과 삶의 질 향상 위한 <br className="hidden md:block" />
+                <span className="text-accent">청년발전기금 전달식</span> 개최"
+              </h4>
+
+              <div className="border-l-4 border-secondary pl-5 mb-5 text-dark/75 leading-relaxed text-[15px]">
+                2025년 6월 27일, 서울 혜화동 <strong>청년문간 슬로우점</strong>에서 청년발전기금 전달식이 열렸습니다.
+                한 그릇당 적립된 100원 기금이 <strong>청년문간사회적협동조합</strong>과 <strong>레인코리아</strong> 두 기관에 공식 전달됐습니다.
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+                <div className="bg-bg/50 rounded-2xl p-4 border border-primary/10">
+                  <div className="text-[10px] font-black tracking-widest text-primary/70 mb-2">전달식 참석</div>
+                  <ul className="text-[13px] text-dark/80 space-y-1 leading-relaxed">
+                    <li>▲ 청년문간 <strong>이문수 가브리엘 신부</strong></li>
+                    <li>▲ HBS <strong>이구승 CEO</strong></li>
+                    <li>▲ 청년38국수 <strong>남지훈 CMO</strong></li>
+                    <li>▲ 레인코리아 <strong>송인창 소장</strong></li>
+                  </ul>
+                </div>
+                <div className="bg-accent/5 rounded-2xl p-4 border border-accent/15 flex flex-col justify-center">
+                  <div className="text-[10px] font-black tracking-widest text-accent/80 mb-2">현장에 걸린 메시지</div>
+                  <blockquote className="font-serif text-base md:text-lg font-bold text-accent leading-snug">
+                    "우리가 먹은 국수 한 그릇,<br />
+                    또 다른 청년의 내일을 응원합니다"
+                  </blockquote>
+                </div>
+              </div>
+
+              <p className="text-sm text-dark/65 leading-relaxed">
+                기사는 청년38국수를 <strong className="text-primary">"청년 중심의 사회적 외식 브랜드"</strong>로 소개하며,
+                올해 10개 매장을 시작으로 <strong className="text-primary">100개 매장 확장 계획</strong>도 공식 보도되었습니다.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Regional footnote */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -724,8 +803,8 @@ const StoreTypes = () => {
       headline: '청년과 지역이 만나는\n동네 커뮤니티 허브',
       desc: '동네 주민과 청년이 편하게 오가는 커뮤니티형 매장. 테이블 회전과 지역 친밀도를 동시에 살립니다.',
       stores: [
-        { name: '청년38국수 문정점', loc: '서울 송파구 문정동', status: '운영중', img: '/images/stores/munjeong/exterior.webp', alt: '청년38국수 문정점 외관' },
-        { name: '청년38국수 구디점', loc: '서울 구로구 구로디지털단지', status: '2026년 6월 초 오픈 예정', img: null, alt: '' },
+        { kind: 'store' as const, name: '청년38국수 문정점', loc: '서울 송파구 문정동', status: '운영중', img: '/images/stores/munjeong/exterior.webp', alt: '청년38국수 문정점 외관' },
+        { kind: 'store' as const, name: '청년38국수 구디점', loc: '서울 구로구 구로디지털단지', status: '2026년 6월 초 오픈 예정', img: null, alt: '' },
       ],
     },
     {
@@ -735,7 +814,8 @@ const StoreTypes = () => {
       headline: '로컬 브랜드로 재탄생하는\n지역 상생 매장',
       desc: '지역 기관·공간과 협력해 해당 지역 이름을 단 로컬 브랜드로 운영. 수익의 일부가 다시 지역으로 환원됩니다.',
       stores: [
-        { name: '다산38국수 다산점', loc: '경기 남양주 다산신도시', status: 'GH 공간복지홈 협력 · 운영중', img: '/images/stores/dasan/exterior.webp', alt: '다산38국수 다산점 외관' },
+        { kind: 'store' as const, name: '다산38국수 다산점', loc: '경기 남양주 다산신도시', status: 'GH 공간복지홈 협력 · 운영중', img: '/images/stores/dasan/exterior.webp', alt: '다산38국수 다산점 외관' },
+        { kind: 'photo' as const, caption: '지역 주민이 모이는 홀 — 다산38국수 다산점 내부', img: '/images/stores/dasan/interior.webp', alt: '다산38국수 다산점 내부 전경' },
       ],
     },
     {
@@ -745,7 +825,8 @@ const StoreTypes = () => {
       headline: '검증된 모델을 그대로,\n가맹 표준형 매장',
       desc: '본사가 검증한 표준 운영 모델을 바탕으로 가맹점주가 운영하는 모델. 지역별 상권에 맞춘 타입으로 개설됩니다.',
       stores: [
-        { name: '청년38국수 월평점', loc: '대전 월평동', status: '운영중', img: '/images/stores/wolpyeong/exterior.webp', alt: '청년38국수 월평점 외관' },
+        { kind: 'store' as const, name: '청년38국수 월평점', loc: '대전 월평동', status: '운영중', img: '/images/stores/wolpyeong/exterior.webp?v=2', alt: '청년38국수 월평점 외관', imgPos: 'object-top' },
+        { kind: 'photo' as const, caption: '따뜻한 동네 밥집 — 청년38국수 월평점 내부', img: '/images/stores/wolpyeong/interior.webp?v=2', alt: '청년38국수 월평점 내부', imgPos: 'object-top' },
       ],
     },
   ];
@@ -802,35 +883,54 @@ const StoreTypes = () => {
               </div>
 
               <div className="px-7 pb-7 mt-auto space-y-4">
-                {m.stores.map((s) => (
-                  <div key={s.name} className="bg-bg/60 rounded-2xl overflow-hidden border border-primary/5">
-                    {s.img ? (
-                      <div className="h-56 overflow-hidden bg-primary/5 relative">
-                        <img
-                          src={s.img}
-                          alt={s.alt}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
-                        />
-                      </div>
-                    ) : (
-                      <div className="h-56 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                        <div className="text-center">
-                          <Store className="mx-auto text-primary/40 mb-2" size={32} />
-                          <div className="text-xs font-bold text-primary/60 tracking-widest">COMING SOON</div>
+                {m.stores.map((s, sIdx) => {
+                  if (s.kind === 'photo') {
+                    return (
+                      <div key={`photo-${sIdx}`} className="bg-bg/60 rounded-2xl overflow-hidden border border-primary/5">
+                        <div className="h-56 overflow-hidden bg-primary/5 relative">
+                          <img
+                            src={s.img}
+                            alt={s.alt}
+                            className={`w-full h-full object-cover ${('imgPos' in s && s.imgPos) ? s.imgPos : ''} hover:scale-105 transition-transform duration-500`}
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="p-4">
+                          <div className="text-xs text-dark/70 leading-snug">{s.caption}</div>
                         </div>
                       </div>
-                    )}
-                    <div className="p-4">
-                      <div className="text-sm font-bold text-dark mb-1">{s.name}</div>
-                      <div className="flex items-start gap-1 text-xs text-dark/60 mb-1">
-                        <MapPin size={12} className="mt-0.5 flex-shrink-0" />
-                        <span>{s.loc}</span>
+                    );
+                  }
+                  return (
+                    <div key={s.name} className="bg-bg/60 rounded-2xl overflow-hidden border border-primary/5">
+                      {s.img ? (
+                        <div className="h-56 overflow-hidden bg-primary/5 relative">
+                          <img
+                            src={s.img}
+                            alt={s.alt}
+                            className={`w-full h-full object-cover ${('imgPos' in s && s.imgPos) ? s.imgPos : ''} hover:scale-105 transition-transform duration-500`}
+                            loading="lazy"
+                          />
+                        </div>
+                      ) : (
+                        <div className="h-56 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                          <div className="text-center">
+                            <Store className="mx-auto text-primary/40 mb-2" size={32} />
+                            <div className="text-xs font-bold text-primary/60 tracking-widest">COMING SOON</div>
+                          </div>
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <div className="text-sm font-bold text-dark mb-1">{s.name}</div>
+                        <div className="flex items-start gap-1 text-xs text-dark/60 mb-1">
+                          <MapPin size={12} className="mt-0.5 flex-shrink-0" />
+                          <span>{s.loc}</span>
+                        </div>
+                        <div className="text-xs text-primary font-semibold">{s.status}</div>
                       </div>
-                      <div className="text-xs text-primary font-semibold">{s.status}</div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
           ))}
@@ -922,7 +1022,7 @@ const Process = () => {
     { title: '상권 분석', desc: '본사 무료 상권 분석 1회 제공', icon: '02' },
     { title: '가맹 계약', desc: '5년 계약 / 본사 보증금 없음', icon: '03' },
     { title: '인테리어 공사', desc: '본사 디자인 가이드라인 적용', icon: '04' },
-    { title: '교육 이수', desc: '점주 + 직원 기초 교육 (2주)', icon: '05' },
+    { title: '교육 이수', desc: '점주 + 직원 기초 교육 (1주)', icon: '05' },
     { title: '개점!', desc: '본사 개점 지원 동행', icon: '06' },
   ];
 
@@ -1076,7 +1176,7 @@ const Support = () => {
     { title: '👨💼 전담 슈퍼바이저', desc: '권역별 1명 배정 · 월 2회 정기 방문', icon: <Users /> },
     { title: '📱 통합 운영 시스템', desc: 'POS + 발주 + 정산 통합 · 월 3만원', icon: <Globe /> },
     { title: '📣 마케팅 지원', desc: 'SNS 광고 · 시즌 메뉴 · 배달 플랫폼 입점 지원', icon: <Zap /> },
-    { title: '📚 교육 프로그램', desc: '2주 기초교육 · 온라인 플랫폼 지속 학습', icon: <BookOpen /> },
+    { title: '📚 교육 프로그램', desc: '1주 기초교육 · 온라인 플랫폼 지속 학습', icon: <BookOpen /> },
     { title: '🤝 상생 지원 제도', desc: '청년 창업자 · 재계약 가맹점 대상 가맹비 감면 혜택', icon: <Handshake /> },
   ];
 
@@ -1117,10 +1217,10 @@ const Gallery = () => {
     { src: '/images/stores/dasan/exterior.webp', caption: '다산38국수 다산점 · GH 공간복지홈', tag: '다산점' },
     { src: '/images/stores/munjeong/interior.webp', caption: '문정점 · 편안한 좌석 구성', tag: '문정점' },
     { src: '/images/common/%EC%9C%A1%EC%88%98%EC%BB%A8%EC%85%892.webp', caption: '매일 우려내는 육수 한 솥', tag: '육수' },
-    { src: '/images/stores/wolpyeong/exterior.webp', caption: '청년38국수 월평점 · 대전 월평동', tag: '월평점' },
+    { src: '/images/stores/wolpyeong/exterior.webp?v=2', caption: '청년38국수 월평점 · 대전 월평동', tag: '월평점' },
     { src: '/images/stores/dasan/interior.webp', caption: '다산점 · 지역 이웃이 함께하는 홀', tag: '다산점' },
     { src: '/images/common/%EC%BB%A8%EC%85%893.webp', caption: '비빔국수 · 한 상 차림 컨셉', tag: '메뉴' },
-    { src: '/images/stores/wolpyeong/interior.webp', caption: '월평점 · 한결같은 로고 월', tag: '월평점' },
+    { src: '/images/stores/wolpyeong/interior.webp?v=2', caption: '월평점 · 한결같은 로고 월', tag: '월평점' },
   ];
 
   return (
@@ -1167,7 +1267,7 @@ const FAQ = () => {
   const faqs = [
     {
       q: '외식업 경험이 없어도 창업이 가능한가요?',
-      a: '네, 전혀 문제없습니다. 본사에서 2주간의 기초 교육(조리·운영·고객응대·위생)을 제공하고, 개점 당일에도 본사 담당자가 현장에 함께합니다. 생면·육수·소스 등 핵심 재료가 표준화되어 있어 외식업 경력 없이도 일정한 품질로 운영하실 수 있습니다.',
+      a: '네, 전혀 문제없습니다. 본사에서 1주일간의 기초 교육(조리·운영·고객응대·위생)을 집중 진행하고, 개점 당일에도 본사 담당자가 현장에 함께합니다. 생면·육수·소스 등 핵심 재료가 표준화되어 있어 외식업 경력 없이도 일정한 품질로 운영하실 수 있습니다.',
     },
     {
       q: '초기 투자비용은 어느 정도 들까요? 본사 보증금이 있나요?',
@@ -1179,19 +1279,23 @@ const FAQ = () => {
     },
     {
       q: '매장 모델(커뮤니티형·지역연계형·가맹형)과 상권별 타입은 어떻게 정해지나요?',
-      a: '먼저 희망 상권에 대한 본사 무료 상권 분석을 진행한 뒤, 유동 특성·배후 수요·공실 면적에 따라 셀프형 / 가든형 / 특수형 중 최적 타입을 제안드립니다. 지역 기관·공공 공간과 연계된 입지의 경우 지역연계형으로 설계될 수 있습니다.',
+      a: '먼저 희망 상권에 대한 본사 무료 상권 분석을 진행한 뒤, 유동 특성·배후 수요·공실 면적에 따라 셀프형 / 가든형 / 특수형 중 최적 타입을 제안드립니다. 지역 기관·공공 공간과 연계된 입지의 경우 지역연계형(로컬 브랜드 운영)으로 설계될 수 있습니다.',
     },
     {
       q: '100원 기부는 가맹점주의 추가 부담인가요?',
-      a: '아닙니다. 대표 메뉴 38국수 판매 수량에 비례한 기부금은 본사 차원에서 집계·전달되며, 가맹점주께 별도 부담을 드리지 않습니다. 현재 청년 교육 기관 「레인코리아」, 청년 커뮤니티 「청년문간」 두 곳으로 정기 후원이 이루어지고 있습니다.',
+      a: '네, 대표 메뉴 38국수 한 그릇당 100원은 가맹점주께서 부담하시는 구조입니다. 본사는 이 기부금에서 별도 마진을 취하지 않고 전액을 청년 교육 기관 「레인코리아」와 청년 커뮤니티 「청년문간」에 그대로 전달하며, 전달식은 기사화되어 매장·브랜드의 공신력 있는 마케팅 자산이 됩니다. 즉 "작은 기부 = 브랜드 스토리 = 지역·단골 유입"으로 이어지는 선순환이며, 실제 전달식과 후원증서는 고객에게 강력한 신뢰 메시지가 됩니다.',
     },
     {
-      q: '왜 다산점은 「다산38국수」라는 이름으로 운영되나요?',
-      a: '다산점은 경기주택도시공사(GH)의 「공간복지홈」 협력 사업으로 개설된 지역연계형 매장입니다. 지역 공공 공간과 함께하는 매장의 취지를 살리기 위해, 동일한 레시피·품질을 유지하되 지역 이름을 단 로컬 브랜드(다산38국수)로 운영하고 있습니다.',
+      q: '예비 가맹점주가 상권 분석을 직접 의뢰할 수 있나요?',
+      a: '네, 가맹 상담 과정에서 본사 무료 상권 분석 1회를 제공해 드립니다. 유동 특성·배후 수요·공실 면적·경쟁 동종업종을 검토한 뒤 셀프형 / 가든형 / 특수형 중 가장 적합한 매장 타입과 예상 투자 규모를 함께 안내드립니다.',
     },
     {
       q: '식재료는 반드시 본사에서 구매해야 하나요?',
       a: '생면·육수 베이스·시그니처 소스 등 맛의 핵심을 좌우하는 재료는 본사 지정 공급을 따릅니다. 다만 본사는 해당 공급에서 별도 마진을 취하지 않으며(노마진 정책), 그 외 부자재와 소모품은 가맹점이 직접 수급하실 수 있습니다.',
+    },
+    {
+      q: '개점 후에도 본사의 운영 지원을 받을 수 있나요?',
+      a: '개점일 현장 동행은 기본이며, 이후에도 정기 방문 슈퍼바이징·신메뉴 리뉴얼·원가 및 매출 분석 등 본사 운영팀의 지속적인 지원을 받으실 수 있습니다. 가맹점 단체 카톡방·교육 자료 업데이트를 통해 전국 가맹점과 노하우가 실시간으로 공유됩니다.',
     },
     {
       q: '가맹 계약 기간과 갱신 조건은 어떻게 되나요?',
