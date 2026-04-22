@@ -79,3 +79,656 @@
 .reveal.active {
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+/* =========================================================
+   PROPOSAL VIEW (청년38국수 가맹영업 제안서)
+   A4 세로 기준 · 화면 & 인쇄 겸용
+   ========================================================= */
+
+.proposal-root {
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--color-dark);
+  background: #e9e4dc;
+  padding: 40px 20px 60px;
+  min-height: 100vh;
+}
+
+.proposal-root h2,
+.proposal-root h3,
+.proposal-root h4,
+.proposal-root h5 {
+  font-family: "Noto Serif KR", serif;
+  color: var(--color-dark);
+}
+
+.proposal-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 30px;
+  padding: 18mm 16mm;
+  background: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+.proposal-page:last-child {
+  page-break-after: auto;
+}
+
+/* ---------- Cover ---------- */
+.cover-page {
+  padding: 0;
+  background: linear-gradient(180deg, #1a1208 0%, #2a1c10 60%, #835a3c 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cover-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(200, 137, 60, 0.25), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(139, 58, 58, 0.35), transparent 50%);
+  pointer-events: none;
+}
+.cover-content {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 24mm 20mm;
+  width: 100%;
+}
+.cover-logo {
+  width: 120px; height: 120px; border-radius: 50%;
+  background: #fff; padding: 10px;
+  margin: 0 auto 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+.cover-brand {
+  margin-bottom: 50mm;
+}
+.cover-kor {
+  font-family: "Noto Serif KR", serif;
+  font-size: 52pt; font-weight: 900;
+  color: #fff; letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.cover-eng {
+  font-family: "Playfair Display", serif;
+  font-size: 14pt; letter-spacing: 0.4em;
+  color: var(--color-secondary);
+  margin-top: 8px;
+}
+.cover-title {
+  margin: 30mm 0;
+}
+.cover-sub {
+  font-family: "Noto Serif KR", serif;
+  font-size: 13pt; color: rgba(255,255,255,0.7);
+  margin-bottom: 18px;
+}
+.cover-title h1 {
+  font-family: "Noto Serif KR", serif;
+  font-size: 40pt; font-weight: 900;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.cover-tag {
+  margin-top: 14px;
+  font-family: "Playfair Display", serif;
+  font-size: 11pt;
+  color: var(--color-secondary);
+  letter-spacing: 0.5em;
+}
+.cover-footer {
+  position: absolute; bottom: 18mm; left: 20mm; right: 20mm;
+  display: flex; justify-content: space-between;
+  font-size: 9pt; color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 12px;
+}
+
+/* ---------- Page Header ---------- */
+.page-header {
+  display: flex; align-items: flex-end; gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 3px double var(--color-primary);
+  margin-bottom: 20px;
+}
+.page-number {
+  font-family: "Playfair Display", serif;
+  font-size: 36pt; font-weight: 700; line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.35;
+}
+.page-title h2 {
+  font-size: 22pt; font-weight: 900;
+  margin: 0; letter-spacing: -0.01em;
+}
+.page-sub {
+  font-family: "Playfair Display", serif;
+  font-size: 9pt; letter-spacing: 0.3em;
+  color: var(--color-secondary);
+  margin-top: 4px;
+}
+
+/* ---------- Section Title ---------- */
+.subsection-title {
+  font-family: "Noto Serif KR", serif;
+  font-size: 13pt; font-weight: 700;
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-secondary);
+  padding-left: 12px;
+  margin: 22px 0 14px;
+}
+.section-intro {
+  font-size: 10pt; color: rgba(26,18,8,0.65);
+  margin: 0 0 16px;
+}
+
+/* ---------- Brand Story ---------- */
+.story-hero {
+  display: grid; grid-template-columns: 1fr auto; gap: 24px;
+  align-items: center;
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.15);
+  padding: 22px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+.story-copy h3 {
+  font-size: 22pt; font-weight: 900; margin: 0 0 14px;
+  line-height: 1.2;
+}
+.story-copy p {
+  font-size: 10pt; line-height: 1.75; margin: 0 0 10px;
+  color: rgba(26,18,8,0.85);
+}
+.story-copy strong { color: var(--color-primary); }
+.story-tags {
+  display: flex; flex-direction: column; gap: 12px;
+  border-left: 2px solid var(--color-secondary);
+  padding-left: 14px;
+}
+.story-tags span {
+  font-family: "Noto Serif KR", serif;
+  font-size: 11pt; font-weight: 700;
+  color: var(--color-primary);
+}
+
+.metrics-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+.metric {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 18px 14px;
+  border-radius: 10px;
+  text-align: center;
+}
+.metric > svg {
+  color: var(--color-secondary);
+  margin: 0 auto 6px;
+}
+.metric-value {
+  font-family: "Noto Serif KR", serif;
+  font-size: 18pt; font-weight: 900;
+  line-height: 1;
+}
+.metric-value span {
+  font-size: 10pt; font-weight: 500;
+  margin-left: 2px;
+}
+.metric-label {
+  font-size: 8.5pt; opacity: 0.75;
+  margin-top: 6px;
+}
+
+/* ---------- Donation ---------- */
+.donation-hero {
+  display: grid; grid-template-columns: auto 1fr; gap: 20px;
+  align-items: center;
+  background: linear-gradient(135deg, #fff4ee 0%, #f7ebdf 100%);
+  border-left: 5px solid var(--color-accent);
+  padding: 20px 22px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+.donation-icon {
+  color: var(--color-accent);
+  background: #fff;
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(139,58,58,0.15);
+  width: 72px; height: 72px;
+}
+.donation-headline {
+  font-family: "Noto Serif KR", serif;
+  font-size: 15pt; font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.donation-headline strong {
+  color: var(--color-accent);
+  font-size: 19pt;
+}
+.donation-main p {
+  font-size: 10pt; line-height: 1.7; margin: 0;
+  color: rgba(26,18,8,0.8);
+}
+.donation-main p strong {
+  color: var(--color-primary);
+}
+
+.donation-partners {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  margin-bottom: 16px;
+}
+.partner-card {
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.2);
+  border-radius: 8px;
+  padding: 18px;
+}
+.partner-label {
+  display: inline-block;
+  font-size: 9pt; font-weight: 700;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.partner-card h4 {
+  font-size: 15pt; font-weight: 900; margin: 0 0 8px;
+  color: var(--color-primary);
+}
+.partner-card p {
+  font-size: 9.5pt; line-height: 1.6; margin: 0;
+  color: rgba(26,18,8,0.75);
+}
+.donation-note {
+  background: var(--color-secondary);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 10pt; line-height: 1.6;
+}
+.donation-note strong {
+  background: rgba(255,255,255,0.2);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* ---------- Menu ---------- */
+.menu-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.menu-card {
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.menu-card img {
+  width: 100%; height: 100px; object-fit: cover; display: block;
+}
+.menu-info {
+  padding: 10px 12px;
+}
+.menu-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 4px;
+}
+.menu-name {
+  font-family: "Noto Serif KR", serif;
+  font-size: 10.5pt; font-weight: 700;
+}
+.menu-price {
+  font-size: 10pt; font-weight: 700; color: var(--color-accent);
+}
+.menu-desc {
+  font-size: 8.5pt; color: rgba(26,18,8,0.6); line-height: 1.4;
+}
+.menu-note {
+  margin-top: 14px;
+  font-size: 9pt; text-align: center;
+  color: rgba(26,18,8,0.5);
+}
+
+/* ---------- Store Types ---------- */
+.type-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.type-brand .type-card {
+  background: #fbf9f6;
+  border: 2px solid rgba(131,90,60,0.2);
+  border-radius: 10px;
+  padding: 16px 14px;
+  text-align: center;
+}
+.type-brand .type-community { border-top: 4px solid var(--color-primary); }
+.type-brand .type-regional  { border-top: 4px solid var(--color-secondary); background: linear-gradient(180deg, #fff9f0 0%, #fbf9f6 100%); }
+.type-brand .type-franchise { border-top: 4px solid var(--color-accent); }
+.type-icon {
+  color: var(--color-primary);
+  margin: 0 auto 8px;
+  width: 48px; height: 48px;
+  background: rgba(131,90,60,0.08);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.type-card h4 {
+  font-size: 13pt; font-weight: 900; margin: 0 0 4px;
+}
+.type-card p {
+  font-size: 9pt; color: rgba(26,18,8,0.65); margin: 0 0 10px;
+}
+.type-stores {
+  font-size: 9pt;
+  background: var(--color-dark);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.type-stores strong { color: var(--color-secondary); }
+
+.type-commercial .type-card {
+  background: #fff;
+  border: 1px solid rgba(131,90,60,0.25);
+  border-radius: 8px;
+  padding: 14px;
+}
+.type-commercial h5 {
+  font-size: 12pt; font-weight: 700; margin: 0 0 4px;
+  color: var(--color-primary);
+}
+.type-spec {
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  font-size: 10pt;
+  background: rgba(200,137,60,0.15);
+  color: var(--color-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+.type-commercial p {
+  font-size: 9pt; color: rgba(26,18,8,0.65); margin: 0;
+}
+
+.dasan-story {
+  background: linear-gradient(135deg, rgba(200,137,60,0.08), rgba(139,58,58,0.05));
+  border: 1px dashed var(--color-secondary);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 14px 0 18px;
+  font-size: 9.5pt; line-height: 1.7;
+  color: rgba(26,18,8,0.85);
+}
+.dasan-label {
+  font-size: 9pt; font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 6px;
+}
+
+/* ---------- Process ---------- */
+.process-grid {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.process-step {
+  background: #fbf9f6;
+  border-top: 3px solid var(--color-primary);
+  padding: 12px 8px;
+  text-align: center;
+  border-radius: 0 0 6px 6px;
+}
+.step-num {
+  font-family: "Playfair Display", serif;
+  font-size: 14pt; font-weight: 700;
+  color: var(--color-primary);
+}
+.step-title {
+  font-size: 10pt; font-weight: 700;
+  margin: 4px 0 3px;
+}
+.step-desc {
+  font-size: 8pt; color: rgba(26,18,8,0.6);
+  line-height: 1.4;
+}
+
+/* ---------- Finance ---------- */
+.finance-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+.finance-left, .finance-right {
+  padding: 18px;
+  border-radius: 10px;
+}
+.finance-left {
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.2);
+}
+.finance-left h4, .finance-right h4 {
+  font-size: 12pt; font-weight: 900;
+  margin: 0 0 12px;
+  color: var(--color-primary);
+}
+.finance-left ul {
+  list-style: none; padding: 0; margin: 0 0 14px;
+}
+.finance-left li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 10pt;
+  padding: 6px 0;
+  border-bottom: 1px dotted rgba(131,90,60,0.2);
+  color: rgba(26,18,8,0.8);
+}
+.finance-left li svg { color: var(--color-primary); flex-shrink: 0; }
+.finance-left li.highlight {
+  background: rgba(200,137,60,0.12);
+  padding: 8px 10px;
+  border: 1px solid rgba(200,137,60,0.35);
+  border-radius: 6px;
+  margin-top: 4px;
+}
+.finance-left li.highlight strong { color: var(--color-secondary); }
+.finance-left .total {
+  border-top: 2px dashed rgba(131,90,60,0.3);
+  padding-top: 12px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.finance-left .total span {
+  font-size: 10pt; font-weight: 700;
+}
+.finance-left .total strong {
+  font-size: 18pt; font-weight: 900;
+  color: var(--color-accent);
+}
+.finance-left .total small {
+  font-size: 8pt; color: rgba(26,18,8,0.5);
+}
+
+.finance-right {
+  background: var(--color-dark);
+  color: #fff;
+}
+.finance-right h4 { color: var(--color-secondary); }
+.profit-big {
+  font-family: "Noto Serif KR", serif;
+  font-size: 36pt; font-weight: 900;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.profit-big span {
+  font-size: 20pt; margin-left: 4px;
+}
+.profit-label {
+  font-size: 9pt; opacity: 0.7;
+  margin-bottom: 14px;
+}
+.profit-list {
+  list-style: none; padding: 0; margin: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 12px;
+}
+.profit-list li {
+  font-size: 9.5pt;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.profit-list li em {
+  color: var(--color-secondary);
+  font-style: normal;
+  font-size: 8.5pt;
+  margin-left: 4px;
+}
+
+/* ---------- Support ---------- */
+.support-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.support-card {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #fbf9f6;
+  border: 1px solid rgba(131,90,60,0.2);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.support-icon {
+  background: var(--color-primary);
+  color: #fff;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.support-title {
+  font-size: 10.5pt; font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+}
+.support-desc {
+  font-size: 9pt; color: rgba(26,18,8,0.65);
+  line-height: 1.5;
+}
+
+/* ---------- Contact ---------- */
+.contact-box {
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #6a4830 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 14px;
+}
+.contact-left h3 {
+  font-size: 20pt; font-weight: 900; color: #fff;
+  margin: 0 0 8px;
+}
+.contact-left > p {
+  font-size: 10pt; opacity: 0.8;
+  margin: 0 0 16px;
+}
+.contact-items {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.contact-item {
+  display: flex; gap: 12px; align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+.contact-item svg { color: var(--color-secondary); }
+.contact-label {
+  font-size: 8pt; opacity: 0.7;
+}
+.contact-item strong {
+  font-family: "Noto Serif KR", serif;
+  font-size: 13pt; font-weight: 900;
+  color: #fff;
+}
+
+.company-info {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: center;
+}
+.ci-logo img {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #fff; padding: 4px;
+  margin: 0 auto 8px;
+  display: block;
+}
+.ci-name {
+  font-family: "Noto Serif KR", serif;
+  font-size: 13pt; font-weight: 900;
+  color: var(--color-secondary);
+}
+.ci-en {
+  font-family: "Playfair Display", serif;
+  font-size: 8pt; opacity: 0.7;
+  letter-spacing: 0.1em;
+  margin: 4px 0 10px;
+}
+.ci-detail {
+  font-size: 8.5pt; line-height: 1.7;
+  opacity: 0.85;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 10px;
+  text-align: left;
+}
+
+.proposal-footer {
+  font-size: 8pt; color: rgba(26,18,8,0.5);
+  text-align: center; line-height: 1.6;
+  padding-top: 10px;
+  border-top: 1px solid rgba(131,90,60,0.15);
+}
+
+/* =========================================================
+   @media print — 실제 인쇄·PDF 저장용
+   ========================================================= */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+@media print {
+  html, body {
+    background: #fff !important;
+    margin: 0; padding: 0;
+  }
+  .proposal-root {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+  .proposal-toolbar { display: none !important; }
+  .proposal-page {
+    width: 210mm;
+    min-height: 297mm;
+    height: 297mm;
+    margin: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always;
+  }
+  .proposal-page:last-child { page-break-after: auto; }
+  /* 색상 인쇄 보장 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
